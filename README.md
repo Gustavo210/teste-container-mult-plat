@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# teste-container-mult-plat
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto é um aplicativo React Native multi-plataforma utilizando Expo Router, com suporte para Android e Web.
 
-## Get started
+## Estrutura do Projeto
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/                # Rotas e telas principais
+  (tabs)/           # Rotas em abas
+  teste/            # Exemplo de rota customizada
+  ...
+components/         # Componentes reutilizáveis
+constants/          # Constantes globais
+hooks/              # Hooks customizados
+assets/             # Imagens e fontes
+scripts/            # Scripts utilitários
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Scripts disponíveis
 
-## Learn more
+- `pnpm start` — Inicia o projeto Expo
 
-To learn more about developing your project with Expo, look at the following resources:
+## Como rodar o projeto
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Instale as dependências do projeto:
+   ```sh
+   pnpm install
+   ```
+2. Inicie o projeto:
+   ```sh
+   pnpm start
+   ```
+3. Para visualizar a aplicação:
+   - **Android:** Utilize o aplicativo Expo Go (na última versão) no seu dispositivo Android para escanear o QR Code exibido no terminal. Isso iniciará o app no seu dispositivo.
+   - **Web:** Acesse a URL disponibilizada no terminal que termina com a porta `8082` para visualizar a aplicação rodando no navegador.
 
-## Join the community
+## Observações
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- O projeto utiliza pacotes internos `@mobilestock-native/container`, `@mobilestock-native/tools` e `@mobilestockweb/container`. Certifique-se de que esses pacotes estejam publicados no NPM ou disponíveis em um repositório privado (como Verdaccio) para que a instalação funcione corretamente.
+- Certifique-se de ter o [Expo CLI](https://docs.expo.dev/get-started/installation/) instalado globalmente.
