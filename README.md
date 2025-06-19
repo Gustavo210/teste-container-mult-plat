@@ -32,7 +32,7 @@ scripts/            # Scripts utilitários
    ```
 3. Para visualizar a aplicação:
    - **Android:** Utilize o aplicativo Expo Go (na última versão) no seu dispositivo Android para escanear o QR Code exibido no terminal. Isso iniciará o app no seu dispositivo.
-   - **Web:** Acesse a URL disponibilizada no terminal que termina com a porta `8082` para visualizar a aplicação rodando no navegador.
+   - **Web:** Acesse a URL disponibilizada no terminal que termina com a porta `8081` para visualizar a aplicação rodando no navegador.
 
 ## Observações
 

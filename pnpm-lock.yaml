@@ -12,14 +12,14 @@ importers:
         specifier: ^14.1.0
         version: 14.1.0(expo-font@13.3.1(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
       '@mobilestock-native/container':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.0
+        version: 0.0.0
       '@mobilestock-native/tools':
         specifier: ^0.0.1
         version: 0.0.1(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
       '@mobilestockweb/container':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.0
+        version: 0.0.0
       '@react-navigation/bottom-tabs':
         specifier: ^7.3.10
         version: 7.3.16(@react-navigation/native@7.1.12(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native-safe-area-context@5.4.0(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native-screens@4.11.1(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
@@ -851,16 +851,16 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@mobilestock-native/container@0.0.1':
-    resolution: {integrity: sha512-zIHP1HT/4lOhT+3NIvq2xFh+iEGjEPLsLM4v0Caiwc1Y3jNrrkkA6jb4xEi3GNyOIyYAkDRfoqk8E5NMT2N+Gw==}
+  '@mobilestock-native/container@0.0.0':
+    resolution: {integrity: sha512-BpOPRSVNcGDhES+y5VuA45uF8veIgJO3K8F1Ncniqj/iZSLw4IOl37iJCYPh0QqkBR0SOl2KF+Mxu505yTemQg==}
 
   '@mobilestock-native/tools@0.0.1':
     resolution: {integrity: sha512-NAsPdCBkL+efUygPbJlcpAksrGv2cd7ksnJZ3+/5p0zI/5g4GIYPjzqNyzUFQbWGe5tMaBkOEubp915SEMiH7Q==}
     peerDependencies:
       react-native: 0.74.5
 
-  '@mobilestockweb/container@0.0.1':
-    resolution: {integrity: sha512-OU8G6R3SdNiuD/16cba8PKTQ7So4inoycVqpMCWxsun2ZfFZ/xNfovPgYv1kkZ2qhgnCKX09JNLKsnzQIw62iA==}
+  '@mobilestockweb/container@0.0.0':
+    resolution: {integrity: sha512-42fhUdCbqI0S5HaXWX+tJQmf4U6vBQ+gl+5HDipqPYcRPIHkOvaQwVT3xlsAJTDWURympvAPEYZLwnLE0j3D2A==}
 
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
@@ -5040,13 +5040,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mobilestock-native/container@0.0.1': {}
+  '@mobilestock-native/container@0.0.0': {}
 
   '@mobilestock-native/tools@0.0.1(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))':
     dependencies:
       react-native: 0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)
 
-  '@mobilestockweb/container@0.0.1': {}
+  '@mobilestockweb/container@0.0.0': {}
 
   '@napi-rs/wasm-runtime@0.2.11':
     dependencies:
