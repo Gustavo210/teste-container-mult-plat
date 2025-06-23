@@ -2,7 +2,8 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
-import { ThemeProvider as TP } from "styled-components/native";
+import { ThemeProvider } from "styled-components";
+import { ThemeProvider as TPN } from "styled-components/native";
 
 import defaultSizes from "@/defaultSizes";
 import { GlobalStyle } from "@/globals";
@@ -16,6 +17,8 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
+
+  const TP = Platform.OS === "web" ? ThemeProvider : TPN;
 
   return (
     <TP
