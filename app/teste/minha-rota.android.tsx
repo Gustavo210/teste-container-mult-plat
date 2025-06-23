@@ -53,7 +53,7 @@ export default function Screen() {
 const CardContainer = () => {
   return (
     <Card>
-      <Container direction="COLUMN">
+      <Container direction="COLUMN" gap="XS">
         <Container>
           <Container direction="ROW" sizeKey="XS" align="CENTER">
             <SkeletonTexto />
@@ -82,7 +82,7 @@ const CardContainer = () => {
 const Step = () => {
   return (
     <SkeletonStep>
-      <Container direction="COLUMN">
+      <Container direction="COLUMN" gap="XS">
         <Container>
           <Container align="CENTER" sizeKey="XS" direction="ROW">
             <SkeletonIcon />
