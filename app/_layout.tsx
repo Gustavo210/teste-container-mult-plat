@@ -20,7 +20,7 @@ export default function RootLayout() {
   return (
     <TP
       theme={{
-        columns: { ...defaultSizes.layout.columns },
+        ...defaultSizes.layout,
       }}
     >
       <Stack>
