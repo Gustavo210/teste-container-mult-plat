@@ -2,11 +2,9 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
-import { ThemeProvider } from "styled-components";
-import { ThemeProvider as TPN } from "styled-components/native";
 
-import defaultSizes from "@/defaultSizes";
 import { GlobalStyle } from "@/globals";
+import ThemeProvider from "@/themeProvider";
 import { Platform } from "react-native";
 
 export default function RootLayout() {
@@ -18,14 +16,8 @@ export default function RootLayout() {
     return null;
   }
 
-  const TP = Platform.OS === "web" ? ThemeProvider : TPN;
-
   return (
-    <TP
-      theme={{
-        ...defaultSizes.layout,
-      }}
-    >
+    <ThemeProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
@@ -34,6 +26,6 @@ export default function RootLayout() {
       </Stack>
       <StatusBar style="auto" />
       {Platform.OS === "web" && <GlobalStyle />}
-    </TP>
+    </ThemeProvider>
   );
 }
