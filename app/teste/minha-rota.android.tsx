@@ -39,7 +39,7 @@ const Botao = styled.Button`
 export default function Screen() {
   return (
     <View style={{ paddingTop: 10 }}>
-      <Container variant="main">
+      <Container variant="MAIN">
         <Text>Implementação usando Container</Text>
         <CardContainer />
         <Spacer />
@@ -53,9 +53,9 @@ export default function Screen() {
 const CardContainer = () => {
   return (
     <Card>
-      <Container direction="column">
+      <Container direction="COLUMN">
         <Container>
-          <Container direction="row" sizeKey="XS" align="center">
+          <Container direction="ROW" sizeKey="XS" align="CENTER">
             <SkeletonTexto />
           </Container>
         </Container>
@@ -65,12 +65,12 @@ const CardContainer = () => {
           <Step />
           <Step />
         </Container>
-        <Container direction="row">
+        <Container direction="ROW">
           <SkeletonTexto />
           <SkeletonTexto />
         </Container>
-        <Container direction="row">
-          <Container sizeKey="XS" align="left">
+        <Container direction="ROW">
+          <Container sizeKey="XS" align="LEFT">
             <SkeletonTextoSmall />
           </Container>
         </Container>
@@ -82,9 +82,9 @@ const CardContainer = () => {
 const Step = () => {
   return (
     <SkeletonStep>
-      <Container direction="column">
+      <Container direction="COLUMN">
         <Container>
-          <Container align="center" sizeKey="XS" direction="row">
+          <Container align="CENTER" sizeKey="XS" direction="ROW">
             <SkeletonIcon />
           </Container>
         </Container>
