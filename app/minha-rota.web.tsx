@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <SkeletonHeader>HEADER</SkeletonHeader>
-      <Container variant="main">
+      <Container variant="MAIN">
         <Container>
           <MyBox>1</MyBox>
           <MyBox>2</MyBox>
@@ -85,9 +85,9 @@ const Botao = styled.button`
 const CardContainer = () => {
   return (
     <SkeletonCard>
-      <Container direction="column">
+      <Container direction="COLUMN">
         <Container>
-          <Container direction="row" size="XS" align="center">
+          <Container direction="ROW" sizeKey="XS" align="CENTER">
             <SkeletonText />
           </Container>
         </Container>
@@ -97,12 +97,12 @@ const CardContainer = () => {
           <Step />
           <Step />
         </Container>
-        <Container direction="row">
+        <Container direction="ROW">
           <SkeletonText />
           <SkeletonText />
         </Container>
-        <Container direction="row">
-          <Container size="XS" align="left">
+        <Container direction="ROW">
+          <Container sizeKey="XS" align="LEFT">
             <SkeletonTextoSmall />
           </Container>
         </Container>
@@ -114,9 +114,9 @@ const CardContainer = () => {
 const Step = () => {
   return (
     <SkeletonStep>
-      <Container direction="column">
+      <Container direction="COLUMN">
         <Container>
-          <Container align="center" size="XS" direction="row">
+          <Container align="CENTER" sizeKey="XS" direction="ROW">
             <SkeletonIcon />
           </Container>
         </Container>
