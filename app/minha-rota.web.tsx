@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <SkeletonHeader>HEADER</SkeletonHeader>
       <Container variant="MAIN">
-        <Container>
+        <Container gapSize="XS">
           <MyBox>1</MyBox>
           <MyBox>2</MyBox>
           <MyBox>3</MyBox>
@@ -20,17 +20,59 @@ export default function Home() {
           <MyBox>11</MyBox>
           <MyBox>12</MyBox>
         </Container>
-
         <CardContainer />
       </Container>
     </>
   );
 }
+const CardContainer = () => {
+  return (
+    <SkeletonCard>
+      <Container direction="COLUMN" gapSize="NONE">
+        <Container>
+          <Container direction="ROW" sizeKey="XS" align="CENTER">
+            <SkeletonText />
+          </Container>
+        </Container>
+        <Container>
+          <Step />
+          <Step />
+          <Step />
+          <Step />
+        </Container>
+        <Container direction="ROW">
+          <SkeletonText />
+          <SkeletonText />
+        </Container>
+        <Container direction="ROW">
+          <Container sizeKey="MD" align="LEFT">
+            <SkeletonTextoSmall />
+          </Container>
+        </Container>
+        <Botao title="TESTE" />
+      </Container>
+    </SkeletonCard>
+  );
+};
+const Step = () => {
+  return (
+    <SkeletonStep>
+      <Container direction="COLUMN">
+        <Container>
+          <Container align="CENTER" sizeKey="XS" direction="ROW">
+            <SkeletonIcon />
+          </Container>
+        </Container>
+        <SkeletonTexto /> <SkeletonTextoSmall />
+      </Container>
+    </SkeletonStep>
+  );
+};
+
 const MyBox = styled.div`
   width: 100%;
   height: 20px;
   background-color: #c9c9c9;
-  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 0.6rem;
 `;
@@ -62,7 +104,7 @@ const SkeletonTextoSmall = styled.span`
 const SkeletonIcon = styled.div`
   background-color: #d9d9d9;
   height: 20px;
-  width: 20px;
+  /* width: 20px; */
   border-radius: 5px;
 `;
 const SkeletonTexto = styled.span`
@@ -82,46 +124,3 @@ const Botao = styled.button`
   padding: 10px 20px;
   height: 40px;
 `;
-const CardContainer = () => {
-  return (
-    <SkeletonCard>
-      <Container direction="COLUMN">
-        <Container>
-          <Container direction="ROW" sizeKey="XS" align="CENTER">
-            <SkeletonText />
-          </Container>
-        </Container>
-        <Container>
-          <Step />
-          <Step />
-          <Step />
-          <Step />
-        </Container>
-        <Container direction="ROW">
-          <SkeletonText />
-          <SkeletonText />
-        </Container>
-        <Container direction="ROW">
-          <Container sizeKey="XS" align="LEFT">
-            <SkeletonTextoSmall />
-          </Container>
-        </Container>
-        <Botao />
-      </Container>
-    </SkeletonCard>
-  );
-};
-const Step = () => {
-  return (
-    <SkeletonStep>
-      <Container direction="COLUMN">
-        <Container>
-          <Container align="CENTER" sizeKey="XS" direction="ROW">
-            <SkeletonIcon />
-          </Container>
-        </Container>
-        <SkeletonTexto /> <SkeletonTextoSmall />
-      </Container>
-    </SkeletonStep>
-  );
-};
