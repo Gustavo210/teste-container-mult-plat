@@ -1,32 +1,30 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Link, Stack } from "expo-router";
+import { Platform, View } from "react-native";
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { lazy } from "react";
 
+const Typo =
+  Platform.OS === "web"
+    ? lazy(() =>
+        import("@mobilestockweb/typography").then((mod) => ({
+          default: mod.Typography,
+        }))
+      )
+    : lazy(() =>
+        import("@mobilestock-native/typography").then((mod) => ({
+          default: mod.Typography,
+        }))
+      );
 export default function NotFoundScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen does not exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
+      <Stack.Screen options={{ title: "Oops!" }} />
+      <View>
+        <Typo size="MD">This screen does not exist.</Typo>
+        <Link href="/">
+          <Typo size="MD">Go to home screen!</Typo>
         </Link>
-      </ThemedView>
+      </View>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-});

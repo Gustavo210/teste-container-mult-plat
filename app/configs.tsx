@@ -16,7 +16,7 @@ export default function Configs() {
           router.back();
         }}
         style={{
-          flex: 2,
+          flex: 1,
           backgroundColor: "transparent",
         }}
       >
