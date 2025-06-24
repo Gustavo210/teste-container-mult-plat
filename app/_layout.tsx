@@ -40,7 +40,7 @@ export default function RootLayout() {
             headerRight: () => (
               <Button title="Configs" onPress={() => alert("Opa")} />
             ),
-            header: () => {
+            header: (props) => {
               return (
                 <View
                   style={{
@@ -48,10 +48,13 @@ export default function RootLayout() {
                     height: 80,
                     flexDirection: "row",
                     alignItems: "center",
-                    backgroundColor: "#f8f8f8",
+                    backgroundColor: "#e5e5e5",
+                    marginBottom: 5,
                   }}
                 >
-                  <Button title="Voltar" onPress={() => router.back()} />
+                  {props.route.name !== "index" && (
+                    <Button title="Voltar" onPress={() => router.back()} />
+                  )}
                   <Text
                     style={{
                       fontFamily: "SpaceMono",
@@ -60,24 +63,31 @@ export default function RootLayout() {
                       textAlign: "center",
                     }}
                   >
-                    {Platform.OS === "web" ? "Web" : "Mobile"}
+                    {Platform.OS === "web" ? "Web" : "Mobile"} -{" "}
+                    {props.route.name}
                   </Text>
-                  <Pressable
-                    style={{
-                      padding: 10,
-                      backgroundColor: "#e0e0e0",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                    onPress={() => router.push("/configs")}
-                  >
-                    <Text>Config</Text>
-                  </Pressable>
+                  {props.route.name !== "index" && (
+                    <Pressable
+                      style={{
+                        padding: 10,
+                        backgroundColor: "#aaa",
+                        borderColor: "#ccc",
+                        borderWidth: 1,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
+                      }}
+                      onPress={() => router.push("/configs")}
+                    >
+                      <Text>Config</Text>
+                    </Pressable>
+                  )}
                 </View>
               );
             },
             title: "Expo Router",
           }}
+          initialRouteName="index"
         >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />

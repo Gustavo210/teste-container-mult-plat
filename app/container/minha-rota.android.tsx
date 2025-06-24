@@ -7,47 +7,45 @@ export default function Home() {
       <SkeletonHeader>
         <SkeletonHeaderText>HEADER</SkeletonHeaderText>
       </SkeletonHeader>
-      <Container variant="MAIN">
-        <Container gap="XS">
-          <MyBox>
-            <MyBoxText>1</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>2</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>3</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>4</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>5</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>6</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>7</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>8</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>9</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>10</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>11</MyBoxText>
-          </MyBox>
-          <MyBox>
-            <MyBoxText>12</MyBoxText>
-          </MyBox>
-        </Container>
-        <CardContainer />
+      <Container gap="XS">
+        <MyBox>
+          <MyBoxText>1</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>2</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>3</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>4</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>5</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>6</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>7</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>8</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>9</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>10</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>11</MyBoxText>
+        </MyBox>
+        <MyBox>
+          <MyBoxText>12</MyBoxText>
+        </MyBox>
       </Container>
+      <CardContainer />
     </>
   );
 }
@@ -55,9 +53,9 @@ export default function Home() {
 const CardContainer = () => {
   return (
     <SkeletonCard>
-      <Container direction="COLUMN" gap="NONE">
+      <Container direction="COLUMN" gap="XS">
         <Container>
-          <Container direction="ROW" sizeKey="XS" align="CENTER">
+          <Container direction="ROW" sizeKey="MD" align="CENTER">
             <SkeletonText />
           </Container>
         </Container>
@@ -86,7 +84,7 @@ const Step = () => {
     <SkeletonStep>
       <Container direction="COLUMN">
         <Container>
-          <Container align="CENTER" sizeKey="XS" direction="ROW">
+          <Container sizeKey="LG" direction="ROW">
             <SkeletonIcon />
           </Container>
         </Container>
@@ -137,7 +135,8 @@ const SkeletonTextoSmall = styled.View`
 const SkeletonIcon = styled.View`
   background-color: #d9d9d9;
   height: 20px;
-  width: 20px;
+  /* width: 20px; */
+  width: 100%;
   border-radius: 5px;
 `;
 const SkeletonTexto = styled.View`

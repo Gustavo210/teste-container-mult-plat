@@ -5,23 +5,21 @@ export default function Home() {
   return (
     <>
       <SkeletonHeader>HEADER</SkeletonHeader>
-      <Container variant="MAIN">
-        <Container gapSize="XS">
-          <MyBox>1</MyBox>
-          <MyBox>2</MyBox>
-          <MyBox>3</MyBox>
-          <MyBox>4</MyBox>
-          <MyBox>5</MyBox>
-          <MyBox>6</MyBox>
-          <MyBox>7</MyBox>
-          <MyBox>8</MyBox>
-          <MyBox>9</MyBox>
-          <MyBox>10</MyBox>
-          <MyBox>11</MyBox>
-          <MyBox>12</MyBox>
-        </Container>
-        <CardContainer />
+      <Container gapSize="XS">
+        <MyBox>1</MyBox>
+        <MyBox>2</MyBox>
+        <MyBox>3</MyBox>
+        <MyBox>4</MyBox>
+        <MyBox>5</MyBox>
+        <MyBox>6</MyBox>
+        <MyBox>7</MyBox>
+        <MyBox>8</MyBox>
+        <MyBox>9</MyBox>
+        <MyBox>10</MyBox>
+        <MyBox>11</MyBox>
+        <MyBox>12</MyBox>
       </Container>
+      <CardContainer />
     </>
   );
 }

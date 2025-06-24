@@ -21,7 +21,7 @@ export default function HomeScreen() {
       <Button
         title="Teste"
         onPress={() => {
-          router.push("/minha-rota");
+          router.push("/container/minha-rota");
         }}
       />
       <ThemedView style={styles.titleContainer}>
