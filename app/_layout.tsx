@@ -90,8 +90,6 @@ export default function RootLayout() {
           initialRouteName="index"
         >
           <Stack.Screen name="+not-found" />
-          <Stack.Screen name="minha-rota" />
-          <Stack.Screen name="teste/minha-rota" />
           <Stack.Screen
             name="configs"
             options={{

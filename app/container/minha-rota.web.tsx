@@ -1,4 +1,5 @@
 import Container from "@mobilestockweb/container";
+import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components";
 
 export default function Home() {
@@ -57,8 +58,8 @@ const Step = () => {
     <SkeletonStep>
       <Container direction="COLUMN">
         <Container>
-          <Container align="CENTER" sizeKey="XS" direction="ROW">
-            <SkeletonIcon />
+          <Container align="CENTER" sizeKey="MD" direction="ROW" debug>
+            <Feather name="check-circle" size={20} color="#007bff" />
           </Container>
         </Container>
         <SkeletonTexto /> <SkeletonTextoSmall />

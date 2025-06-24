@@ -1,4 +1,6 @@
 import { Container } from "@mobilestock-native/container";
+import { View } from "react-native";
+import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components/native";
 
 export default function Home() {
@@ -55,7 +57,7 @@ const CardContainer = () => {
     <SkeletonCard>
       <Container direction="COLUMN" gap="XS">
         <Container>
-          <Container direction="ROW" sizeKey="MD" align="CENTER">
+          <Container direction="ROW" size="MD" align="CENTER">
             <SkeletonText />
           </Container>
         </Container>
@@ -70,7 +72,7 @@ const CardContainer = () => {
           <SkeletonText />
         </Container>
         <Container direction="ROW">
-          <Container sizeKey="MD" align="LEFT">
+          <Container size="MD" align="LEFT">
             <SkeletonTextoSmall />
           </Container>
         </Container>
@@ -84,8 +86,15 @@ const Step = () => {
     <SkeletonStep>
       <Container direction="COLUMN">
         <Container>
-          <Container sizeKey="LG" direction="ROW">
-            <SkeletonIcon />
+          <Container size="4XL" align="CENTER" direction="ROW" debug>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </View>
           </Container>
         </Container>
         <SkeletonTexto /> <SkeletonTextoSmall />
