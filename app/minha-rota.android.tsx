@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <SkeletonHeader>
-        <SkeletonHeaderText>HEADE2R</SkeletonHeaderText>
+        <SkeletonHeaderText>HEADER</SkeletonHeaderText>
       </SkeletonHeader>
       <Container variant="MAIN">
         <Container gap="XS">
