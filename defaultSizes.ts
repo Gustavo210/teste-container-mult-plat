@@ -44,4 +44,4 @@ export default {
       "3xl": anToWeSize("2rem"),
     },
   },
-};
+} as const;
