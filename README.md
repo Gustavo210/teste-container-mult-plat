@@ -2,20 +2,6 @@
 
 Este projeto é um aplicativo React Native multi-plataforma utilizando Expo Router, com suporte para Android e Web.
 
-## Estrutura do Projeto
-
-```
-app/                # Rotas e telas principais
-  (tabs)/           # Rotas em abas
-  teste/            # Exemplo de rota customizada
-  ...
-components/         # Componentes reutilizáveis
-constants/          # Constantes globais
-hooks/              # Hooks customizados
-assets/             # Imagens e fontes
-scripts/            # Scripts utilitários
-```
-
 ## Scripts disponíveis
 
 - `pnpm start` — Inicia o projeto Expo
