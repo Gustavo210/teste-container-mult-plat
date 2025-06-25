@@ -1,4 +1,4 @@
-# teste-container-mult-plat
+# mult-plat
 
 Este projeto é um aplicativo React Native multi-plataforma utilizando Expo Router, com suporte para Android e Web.
 

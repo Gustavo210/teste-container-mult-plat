@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "teste-container-mult-plat",
-    "slug": "teste-container-mult-plat",
+    "name": "mult-plat",
+    "slug": "mult-plat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
