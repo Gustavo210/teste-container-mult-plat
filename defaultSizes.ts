@@ -8,13 +8,18 @@ function anToWeSize(value: `${number}rem`) {
 function anToWeColumns(value: number) {
   return Platform.OS === "android" ? Math.ceil(value / 3) : value;
 }
-function anToWeFontSize(value: `${number}rem`) {
-  const Typo =
+function anToWeImage(value: `${number}rem`) {
+  const tools =
     Platform.OS === "web"
       ? require("@mobilestockweb/tools")
       : require("@mobilestock-native/tools");
   return Platform.OS === "android"
-    ? Typo.default.calculateFontSize(value)
+    ? tools.default.calculateImageSize(value)
+    : value;
+}
+function anToWeFontSize(value: `${number}rem`) {
+  return Platform.OS === "android"
+    ? require("@mobilestock-native/tools").default.calculateFontSize(value)
     : value;
 }
 
@@ -61,6 +66,20 @@ export default {
       xl: anToWeFontSize("1.75rem"),
       "2xl": anToWeFontSize("1.875rem"),
       "3xl": anToWeFontSize("2rem"),
+    },
+    size: {
+      xs: anToWeFontSize("4.125rem"),
+      sm: anToWeFontSize("5.625rem"),
+      md: anToWeFontSize("9.375rem"),
+      lg: anToWeFontSize("15.9375rem"),
+      xl: anToWeFontSize("18.75rem"),
+      "2xl": anToWeFontSize("28.125rem"),
+      full: 100,
+    },
+    borderRadius: {
+      rounded: "99999px",
+      default: "5px",
+      none: "0px",
     },
   },
 } as const;

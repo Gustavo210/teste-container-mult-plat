@@ -90,6 +90,7 @@ export default function RootLayout() {
           initialRouteName="index"
         >
           <Stack.Screen name="+not-found" />
+          <Stack.Screen name="image" />
           <Stack.Screen
             name="configs"
             options={{

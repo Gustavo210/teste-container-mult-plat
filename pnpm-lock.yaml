@@ -14,9 +14,12 @@ importers:
       '@mobilestock-native/container':
         specifier: ^0.0.0
         version: 0.0.0
+      '@mobilestock-native/image':
+        specifier: ^0.0.5
+        version: 0.0.5(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@mobilestock-native/tools':
-        specifier: ^0.0.2
-        version: 0.0.2(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
+        specifier: ^0.0.6
+        version: 0.0.6(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
       '@mobilestock-native/typography':
         specifier: ^0.0.1
         version: 0.0.1(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -872,10 +875,20 @@ packages:
   '@mobilestock-native/container@0.0.0':
     resolution: {integrity: sha512-MaYRzC660UdU0a7DaIlpRdrKRubaX+WMSprtgkeMs/xadJe22AxCqzNnLX0CAP0om2Q1ipZKd6VrK7dS8Is0vw==}
 
+  '@mobilestock-native/image@0.0.5':
+    resolution: {integrity: sha512-r8VFu2QABUtWhgx1qph4vhn7WSQFQx/QKV+j4bWI08ROkR3z3Fh4FD3xBbHUC7FQobp2lsvlIrcJTbRLKQK71A==}
+    peerDependencies:
+      styled-components: ^6.1.8
+
   '@mobilestock-native/tools@0.0.2':
     resolution: {integrity: sha512-xwKqsde4CbQyM940pr8AU36dJzq48s8gc6B5AV+HMQddOduwnrRJat6iqYImuFT3EGRHK//pXAg60oJk2JUeoA==}
     peerDependencies:
       react-native: 0.74.5
+
+  '@mobilestock-native/tools@0.0.6':
+    resolution: {integrity: sha512-CT9tvRntTY6f2Z2PJFDzg7ITHbL2vLBSUFwz6YvMunLTZwnx31+l0lidX1euP79tcT0YHfvOKmsfxKaeCrnaZQ==}
+    peerDependencies:
+      react-native: 0.79.4
 
   '@mobilestock-native/typography@0.0.1':
     resolution: {integrity: sha512-ktGHFNL24sdtu6cJOGSiWE+GWhZocpbpxomSwwPIrWaaJLP/9NzDdKRM7csu+xhLZEZCGvZ/7OtQkuqVM0R1DQ==}
@@ -5143,7 +5156,18 @@ snapshots:
 
   '@mobilestock-native/container@0.0.0': {}
 
+  '@mobilestock-native/image@0.0.5(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+    dependencies:
+      '@mobilestock-native/tools': 0.0.6(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
+      styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+    transitivePeerDependencies:
+      - react-native
+
   '@mobilestock-native/tools@0.0.2(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))':
+    dependencies:
+      react-native: 0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)
+
+  '@mobilestock-native/tools@0.0.6(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))':
     dependencies:
       react-native: 0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)
 

@@ -1,13 +1,22 @@
 import { router } from "expo-router";
-import { Button, ScrollView } from "react-native";
+import { Button, FlatList, View } from "react-native";
+
+const routes = [
+  { title: "Container", path: "/container/minha-rota" },
+  { title: "Image", path: "/image" },
+];
 
 export default function Screen() {
   return (
-    <ScrollView>
-      <Button
-        title="Container"
-        onPress={() => router.push("/container/minha-rota")}
-      />
-    </ScrollView>
+    <FlatList
+      data={routes}
+      keyExtractor={(item) => item.path}
+      renderItem={({ item }) => (
+        <View style={{ marginVertical: 8 }}>
+          <Button title={item.title} onPress={() => router.push(item.path)} />
+        </View>
+      )}
+      contentContainerStyle={{ padding: 16 }}
+    />
   );
 }

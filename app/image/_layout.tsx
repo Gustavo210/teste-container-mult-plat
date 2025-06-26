@@ -12,7 +12,7 @@ const Container =
       );
 export default function RootLayout() {
   return (
-    <Container variant="MAIN">
+    <Container debug variant="MAIN">
       <Slot />
     </Container>
   );
