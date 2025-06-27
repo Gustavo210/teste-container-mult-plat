@@ -6,7 +6,7 @@ const Container =
   Platform.OS === "web"
     ? lazy(() => import("@mobilestockweb/container"))
     : lazy(() =>
-        import("@mobilestock-native/container").then((mod) => ({
+        import("@/Container/src").then((mod) => ({
           default: mod.Container,
         }))
       );

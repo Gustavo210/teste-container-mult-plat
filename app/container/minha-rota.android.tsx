@@ -1,5 +1,5 @@
-import { Container } from "@mobilestock-native/container";
-import { View } from "react-native";
+// import { Container } from "@mobilestock-native/container";
+import { Container } from "@/Container/src";
 import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components/native";
 
@@ -9,42 +9,66 @@ export default function Home() {
       <SkeletonHeader>
         <SkeletonHeaderText>HEADER</SkeletonHeaderText>
       </SkeletonHeader>
-      <Container gap="XS">
+      <Container gap="2XS" align="CENTER" debug>
         <MyBox>
-          <MyBoxText>1</MyBoxText>
+          <Text>
+            <MyBoxText>1</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>2</MyBoxText>
+          <Text>
+            <MyBoxText>2</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>3</MyBoxText>
+          <Text>
+            <MyBoxText>3</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>4</MyBoxText>
+          <Text>
+            <MyBoxText>4</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>5</MyBoxText>
+          <Text>
+            <MyBoxText>5</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>6</MyBoxText>
+          <Text>
+            <MyBoxText>6</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>7</MyBoxText>
+          <Text>
+            <MyBoxText>7</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>8</MyBoxText>
+          <Text>
+            <MyBoxText>8</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>9</MyBoxText>
+          <Text>
+            <MyBoxText>9</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>10</MyBoxText>
+          <Text>
+            <MyBoxText>10</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>11</MyBoxText>
+          <Text>
+            <MyBoxText>11</MyBoxText>
+          </Text>
         </MyBox>
         <MyBox>
-          <MyBoxText>12</MyBoxText>
+          <Text>
+            <MyBoxText>12</MyBoxText>
+          </Text>
         </MyBox>
       </Container>
       <CardContainer />
@@ -54,54 +78,104 @@ export default function Home() {
 
 const CardContainer = () => {
   return (
-    <SkeletonCard>
-      <Container direction="COLUMN" gap="XS">
-        <Container>
-          <Container direction="ROW" size="MD" align="CENTER">
+    <>
+      <SkeletonCard>
+        <Container direction="COLUMN">
+          <Container>
+            <Container direction="ROW" size="MD" align="CENTER">
+              <SkeletonText />
+            </Container>
+          </Container>
+          <Container>
+            <Step />
+            <Step />
+            <Step />
+            <Step />
+          </Container>
+          <Container direction="ROW">
+            <SkeletonText />
             <SkeletonText />
           </Container>
-        </Container>
-        <Container>
-          <Step />
-          <Step />
-          <Step />
-          <Step />
-        </Container>
-        <Container direction="ROW">
-          <SkeletonText />
-          <SkeletonText />
-        </Container>
-        <Container direction="ROW">
-          <Container size="MD" align="LEFT">
-            <SkeletonTextoSmall />
+          <Container direction="ROW" align="SPACE_BETWEEN">
+            <Container size="XS">
+              <SkeletonTextoSmall />
+            </Container>
+            <Container size="XS">
+              <SkeletonTextoSmall />
+            </Container>
           </Container>
+          <Botao title="TESTE" />
         </Container>
-        <Botao title="TESTE" />
-      </Container>
-    </SkeletonCard>
+      </SkeletonCard>
+    </>
   );
 };
 const Step = () => {
   return (
-    <SkeletonStep>
-      <Container direction="COLUMN">
-        <Container>
-          <Container size="4XL" align="CENTER" direction="ROW" debug>
-            <View
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+    <>
+      <SkeletonStep>
+        <Container direction="COLUMN" debug>
+          <Container align="CENTER" debug>
+            <Container size="4XL" align="CENTER" direction="ROW" noFlex debug>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </Container>
+          </Container>
+          <Container align="CENTER">
+            <Container size="4XL" align="LEFT" direction="ROW" noFlex>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </Container>
+          </Container>
+          <Container align="CENTER">
+            <Container size="4XL" align="RIGHT" direction="ROW" noFlex>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </Container>
+          </Container>
+          <Container align="CENTER">
+            <Container
+              size="4XL"
+              align="SPACE_BETWEEN"
+              direction="ROW"
+              noFlex
+              gap="NONE"
             >
               <Feather name="check-circle" size={20} color="#007bff" />
-            </View>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </Container>
           </Container>
+          <SkeletonTexto /> <SkeletonTextoSmall />
         </Container>
-        <SkeletonTexto /> <SkeletonTextoSmall />
-      </Container>
-    </SkeletonStep>
+      </SkeletonStep>
+    </>
   );
 };
+const Card = styled.View`
+  border: 1px solid #ccc;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: 8px;
+  gap: 8px;
+`;
+const Title = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+`;
+const Content = styled.View`
+  /* padding: 16px; */
+`;
+const Text = styled.Text`
+  font-size: 10px;
+  color: #333;
+`;
+const Footer = styled.View`
+  padding: 8px;
+  background-color: red;
+`;
+const Button = styled.TouchableOpacity`
+  background-color: #007bff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  align-items: center;
+`;
 
 const MyBox = styled.View`
   width: 100%;
@@ -137,7 +211,7 @@ const SkeletonCard = styled.View`
   padding: 10px;
 `;
 const SkeletonTextoSmall = styled.View`
-  background-color: #d9d9d9;
+  background-color: #ff00ff;
   height: 10px;
   border-radius: 5px;
 `;
