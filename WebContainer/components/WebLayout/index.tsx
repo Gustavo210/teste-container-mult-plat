@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 interface WebLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function WebLayout(props: WebLayoutProps): JSX.Element {
-  return <PageWrapper>{props.children}</PageWrapper>
+  return <PageWrapper>{props.children}</PageWrapper>;
 }
 
 const PageWrapper = styled.div`
@@ -22,4 +22,4 @@ const PageWrapper = styled.div`
     padding: 0 1rem;
     max-width: 100%;
   }
-`
+`;
