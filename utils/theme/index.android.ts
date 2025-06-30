@@ -182,7 +182,9 @@ export const theme = {
       return Math.round(heightPercent);
     },
   },
-  spacing: { ...defaultSizes.layout.space },
+  spacing: { ...defaultSizes.space },
   columns: { ...defaultSizes.columns },
   gaps: { ...defaultSizes.gaps },
+  borderRadius: { ...defaultSizes.borderRadius },
+  sizeImage: { ...defaultSizes.sizeImage },
 } as const;

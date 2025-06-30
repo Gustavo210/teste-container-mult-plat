@@ -1,4 +1,6 @@
 import { Platform } from "react-native";
+import * as androidTheme from "./index.android";
+import * as webTheme from "./index.web";
 
 export const theme =
-  Platform.OS === "web" ? require("./theme.web") : require("./theme.android");
+  Platform.OS === "web" ? webTheme.theme : androidTheme.theme;

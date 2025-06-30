@@ -10,16 +10,14 @@ export const defaultSizes = {
     "2xl": tools.calculateFontSize("1.875rem"),
     "3xl": tools.calculateFontSize("2rem"),
   },
-  layout: {
-    space: {
-      xs: "0.75rem",
-      sm: "0.875rem",
-      md: "1rem",
-      lg: "1.25rem",
-      xl: "1.75rem",
-      "2xl": "1.875rem",
-      "3xl": "2rem",
-    },
+  space: {
+    xs: "0.75rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1.25rem",
+    xl: "1.75rem",
+    "2xl": "1.875rem",
+    "3xl": "2rem",
   },
   columns: {
     xs: 1,
@@ -44,5 +42,19 @@ export const defaultSizes = {
     xl: "1.5rem",
     "2xl": "1.75rem",
     "3xl": "2rem",
+  },
+  sizeImage: {
+    xs: "4.125rem",
+    sm: "5.625rem",
+    md: "9.375rem",
+    lg: "15.9375rem",
+    xl: "18.75rem",
+    "2xl": "28.125rem",
+    full: "100%",
+  },
+  borderRadius: {
+    rounded: "99999px",
+    default: "5px",
+    none: "0px",
   },
 };

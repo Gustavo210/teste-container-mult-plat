@@ -1,6 +1,6 @@
 export default {
   primary: "#000000",
-  secondary: "#FFFFFF",
+  secondary: "#222222",
   tertiary: "#FF0000",
 
   red53: "#DB3344",

@@ -85,7 +85,9 @@ export const theme = {
       black: 900,
     },
   },
-  spacing: { ...defaultSizes.layout.space },
+  spacing: { ...defaultSizes.space },
   columns: { ...defaultSizes.columns },
   gaps: { ...defaultSizes.gaps },
+  borderRadius: { ...defaultSizes.borderRadius },
+  sizeImage: { ...defaultSizes.sizeImage },
 } as const;
