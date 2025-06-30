@@ -1,7 +1,7 @@
 import React from "react";
 import { DefaultTheme } from "styled-components/native";
 
-import FlexBox from "./components/FlexBox";
+import { FlexBox } from "./components/FlexBox";
 import { Layout } from "./components/Layout";
 
 type ContainerAlign = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";

@@ -1,22 +1,39 @@
 import React from "react";
+import { LayoutChangeEvent } from "react-native";
 import styled, { css } from "styled-components/native";
 
-interface ColumnLayoutProps {
+import { FlexBoxProps } from "../..";
+import { getAlignmentStyles } from "../../../utils";
+
+interface RowLayoutProps {
   children: React.ReactNode;
   gapSize: string;
+  align?: FlexBoxProps["align"];
+  onLayout(event: LayoutChangeEvent): void;
 }
 
-export default function ColumnLayout({ children, gapSize }: ColumnLayoutProps) {
-  return <ColumnContainer $gapSize={gapSize}>{children}</ColumnContainer>;
+export default function RowLayout({
+  children,
+  gapSize,
+  align,
+  onLayout,
+}: RowLayoutProps) {
+  return (
+    <RowContainer $gapSize={gapSize} $align={align} onLayout={onLayout}>
+      {children}
+    </RowContainer>
+  );
 }
 
-const ColumnContainer = styled.View<{
+const RowContainer = styled.View<{
   $gapSize: string;
+  $align?: FlexBoxProps["align"];
 }>`
-  width: 100%;
-  flex-direction: column;
+  flex-direction: row;
 
   ${({ $gapSize, theme }) => css`
     gap: ${theme.gaps[$gapSize.toLowerCase()]}px;
   `}
+
+  ${({ $align }) => getAlignmentStyles($align, true)}
 `;

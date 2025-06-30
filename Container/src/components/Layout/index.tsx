@@ -47,7 +47,9 @@ const ColumnContainer = styled.View`
   z-index: -1;
 `;
 
-const VirtualizedColumn = styled.View`
+const VirtualizedColumn = styled.View.attrs({
+  testID: "virtual-column",
+})`
   flex: 1;
   background-color: #c8348848;
   opacity: 0.3;

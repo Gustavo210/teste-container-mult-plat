@@ -3,6 +3,7 @@ import { LayoutChangeEvent } from "react-native";
 import styled, { css } from "styled-components/native";
 
 import { FlexBoxProps } from "../..";
+import { getAlignmentStyles } from "../../../utils";
 
 interface RowLayoutProps {
   children: React.ReactNode;
@@ -34,24 +35,5 @@ const RowContainer = styled.View<{
     gap: ${theme.gaps[$gapSize.toLowerCase()]}px;
   `}
 
-  ${({ $align }) => {
-    switch ($align) {
-      case "CENTER":
-        return css`
-          justify-content: center;
-        `;
-      case "RIGHT":
-        return css`
-          justify-content: flex-end;
-        `;
-      case "SPACE_BETWEEN":
-        return css`
-          justify-content: space-between;
-        `;
-      default:
-        return css`
-          justify-content: flex-start;
-        `;
-    }
-  }}
+  ${({ $align }) => getAlignmentStyles($align, true)}
 `;
