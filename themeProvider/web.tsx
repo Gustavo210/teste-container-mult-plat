@@ -1,19 +1,11 @@
 import { ThemeProvider } from "styled-components";
 
-import defaultSizes from "@/defaultSizes";
+import { theme } from "@/utils/theme";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <ThemeProvider
-      theme={{
-        ...defaultSizes.layout,
-      }}
-    >
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
