@@ -20,6 +20,12 @@ function anToWeFontSize(value: `${number}rem`) {
 
 export default {
   layout: {
+    colors: {
+      text: {
+        default: "#000",
+      },
+    },
+
     space: {
       xs: anToWeSize("0.75rem"),
       sm: anToWeSize("0.875rem"),
@@ -54,13 +60,35 @@ export default {
       "3xl": anToWeSize("2rem"),
     },
     font: {
-      xs: anToWeFontSize("0.75rem"),
-      sm: anToWeFontSize("0.875rem"),
-      md: anToWeFontSize("1rem"),
-      lg: anToWeFontSize("1.25rem"),
-      xl: anToWeFontSize("1.75rem"),
-      "2xl": anToWeFontSize("1.875rem"),
-      "3xl": anToWeFontSize("2rem"),
+      families: [
+        "Arial",
+        "Poppins",
+        "Exile",
+        "JetBrains Mono",
+        "Monocraft",
+        "sans-serif",
+      ],
+      lineHeight: 1.2,
+      weight: {
+        thin: 100,
+        extraLight: 200,
+        light: 300,
+        regular: 400,
+        medium: 500,
+        semiBold: 600,
+        bold: 700,
+        extraBold: 800,
+        black: 900,
+      },
+      size: {
+        xs: anToWeFontSize("0.75rem"),
+        sm: anToWeFontSize("0.875rem"),
+        md: anToWeFontSize("1rem"),
+        lg: anToWeFontSize("1.25rem"),
+        xl: anToWeFontSize("1.75rem"),
+        "2xl": anToWeFontSize("1.875rem"),
+        "3xl": anToWeFontSize("2rem"),
+      },
     },
   },
 } as const;

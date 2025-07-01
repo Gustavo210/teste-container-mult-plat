@@ -3,15 +3,24 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start"
+    "start": "expo start",
+    "create-route": "node create-route.js"
   },
   "dependencies": {
     "@mobilestock-native/container": "^0.0.42",
     "@mobilestockweb/container": "^0.0.34",
     "@expo/vector-icons": "^14.1.0",
-    "@mobilestock-native/tools": "^0.0.3",
+    "@mobilestock-native/container": "^0.0.0",
+    "@mobilestock-native/image": "^0.0.0",
+    "@mobilestock-native/spacer": "^0.0.2",
+    "@mobilestock-native/tools": "^0.0.4",
     "@mobilestock-native/typography": "^0.0.1",
-    "@mobilestockweb/tools": "^0.0.16",
+    "@mobilestockweb/container": "^0.0.0",
+    "@mobilestockweb/image": "^0.0.0",
+    "@mobilestockweb/lazy-image": "^0.0.10",
+    "@mobilestockweb/list": "^0.0.0",
+    "@mobilestockweb/spacer": "^1.0.1",
+    "@mobilestockweb/tools": "^0.0.11",
     "@mobilestockweb/typography": "^0.0.1",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
