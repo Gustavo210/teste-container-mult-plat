@@ -1,6 +1,7 @@
 // import Container from "@mobilestockweb/container";
+import VContainer from "@/VContainer";
 import WebContainer from "@/WebContainer";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components";
 
@@ -31,9 +32,9 @@ export default function Home() {
 const CardContainer = () => {
   return (
     <SkeletonCard>
-      <WebContainer direction="COLUMN">
-        <WebContainer>
-          <WebContainer direction="ROW" sizeKey="XS" align="CENTER">
+      <WebContainer direction="COLUMN" gapSize="NONE">
+        <WebContainer debug>
+          <WebContainer direction="ROW" sizeKey="SM" align="CENTER" debug>
             <SkeletonText />
           </WebContainer>
         </WebContainer>
@@ -48,11 +49,17 @@ const CardContainer = () => {
           <SkeletonText />
         </WebContainer>
         <WebContainer direction="ROW">
-          <WebContainer sizeKey="MD" align="CENTER">
+          <WebContainer sizeKey="MD" align="LEFT">
             <SkeletonTextoSmall />
           </WebContainer>
         </WebContainer>
         <Botao>TESTE</Botao>
+      </WebContainer>
+      <WebContainer>
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
       </WebContainer>
     </SkeletonCard>
   );
@@ -60,17 +67,106 @@ const CardContainer = () => {
 const Step = () => {
   return (
     <SkeletonStep>
-      <WebContainer direction="COLUMN">
-        <WebContainer>
-          <WebContainer align="CENTER" sizeKey="MD" direction="ROW" auto>
-            <Feather name="check-circle" size={20} color="#007bff" />
-          </WebContainer>
+      <WebContainer direction="COLUMN" gapSize="NONE" debug align="CENTER">
+        <WebContainer align="CENTER" sizeKey="MD" direction="ROW" debug noFlex>
+          <Feather name="check-circle" size={20} color="#007bff" />
+        </WebContainer>
+        <WebContainer align="LEFT" sizeKey="MD" direction="ROW" debug noFlex>
+          <Feather name="check-circle" size={20} color="#007bff" />
+        </WebContainer>
+        <WebContainer align="RIGHT" sizeKey="MD" direction="ROW" debug noFlex>
+          <Feather name="check-circle" size={20} color="#007bff" />
+        </WebContainer>
+        <WebContainer align="SPACE_BETWEEN" sizeKey="MD" direction="ROW" debug>
+          <Feather name="check-circle" size={20} color="#007bff" />
+          <Feather name="check-circle" size={20} color="#007bff" />
         </WebContainer>
         <SkeletonTexto /> <SkeletonTextoSmall />
-        <WebContainer direction="ROW" gapSize="SM" sizeKey="XS">
+        <WebContainer direction="ROW" gapSize="SM">
           <SkeletonTexto />
         </WebContainer>
       </WebContainer>
+    </SkeletonStep>
+  );
+};
+
+const StepDiv = () => {
+  return (
+    <SkeletonStep>
+      <VContainer direction="COLUMN" debug>
+        <VContainer align="CENTER" sizeKey="4XL">
+          <VContainer direction="COLUMN" align="CENTER">
+            <VContainer align="CENTER" sizeKey="XL" debug>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </VContainer>
+            <VContainer align="LEFT" debug>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </VContainer>
+            <VContainer align="RIGHT" debug>
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </VContainer>
+            <VContainer align="SPACE_BETWEEN" debug>
+              <Feather name="check-circle" size={20} color="#007bff" />
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </VContainer>
+          </VContainer>
+        </VContainer>
+        <SkeletonTexto /> <SkeletonTextoSmall />
+        <WebContainer direction="ROW" gapSize="NONE">
+          <SkeletonTexto />
+          <SkeletonTexto />
+        </WebContainer>
+      </VContainer>
+    </SkeletonStep>
+  );
+};
+
+const StepView = () => {
+  return (
+    <SkeletonStep>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          gap: 0,
+          border: "1px solid red",
+        }}
+      >
+        <View style={{ display: "flex", flexDirection: "row", flex: 1 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              width: 272.5,
+            }}
+          >
+            <Feather name="check-circle" size={20} color="#007bff" />
+          </View>
+        </View>
+        <SkeletonTexto /> <SkeletonTextoSmall />
+        <View
+          style={{
+            flexDirection: "row",
+            // flexDirection: "column",
+          }}
+        >
+          <View
+            style={{
+              width: 80,
+              flex: 1,
+            }}
+          >
+            <SkeletonTexto />
+          </View>
+          <View
+            style={{
+              flex: 1,
+            }}
+          >
+            <SkeletonTexto />
+          </View>
+        </View>
+      </View>
     </SkeletonStep>
   );
 };

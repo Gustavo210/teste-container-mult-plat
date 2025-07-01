@@ -1,46 +1,39 @@
-import React from "react";
-import { DefaultTheme } from "styled-components/native";
+import React from 'react'
+import { DefaultTheme } from 'styled-components/native'
 
-import { FlexBox } from "./components/FlexBox";
-import { Layout } from "./components/Layout";
+import { ContainerBox } from './components/ContainerBox'
+import { ContainerMain } from './components/ContainerMain'
 
-type ContainerAlign = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";
+export type AlignOptions = 'LEFT' | 'CENTER' | 'RIGHT' | 'SPACE_BETWEEN'
 
 interface ContainerProps {
-  children: React.ReactNode;
-  variant?: "MAIN" | "BOX";
-  direction?: "ROW" | "COLUMN";
-  align?: ContainerAlign;
-  size?: Uppercase<keyof DefaultTheme["columns"] & string>;
-  gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
-  noFlex?: boolean;
-  debug?: boolean | string;
+  children: React.ReactNode
+  variant?: 'MAIN' | 'BOX'
+  direction?: 'ROW' | 'COLUMN'
+  align?: AlignOptions
+  size?: Uppercase<keyof DefaultTheme['columns'] & string>
+  gap?: Uppercase<keyof DefaultTheme['gaps'] & string>
+  noFlex?: boolean
+  debug?: boolean | string
 }
 
 export function Container({
-  variant = "BOX",
+  variant = 'BOX',
   children,
-  direction = "ROW",
-  align = "LEFT",
+  direction = 'ROW',
+  align = 'LEFT',
   size,
   gap,
   noFlex = false,
-  debug = false,
-}: ContainerProps): JSX.Element {
-  if (variant === "MAIN") {
-    return <Layout debug={debug}>{children}</Layout>;
+  debug = false
+}: ContainerProps) {
+  if (variant === 'MAIN') {
+    return <ContainerMain debug={debug}>{children}</ContainerMain>
   }
 
   return (
-    <FlexBox
-      direction={direction}
-      align={align}
-      sizeKey={size}
-      gapSize={gap}
-      noFlex={noFlex}
-      debug={debug}
-    >
+    <ContainerBox direction={direction} align={align} sizeKey={size} gapSize={gap} noFlex={noFlex} debug={debug}>
       {children}
-    </FlexBox>
-  );
+    </ContainerBox>
+  )
 }

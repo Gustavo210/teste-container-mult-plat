@@ -1,0 +1,28 @@
+{
+  "name": "@mobilestock-native/container",
+  "version": "0.0.0",
+  "main": "./src/index.tsx",
+  "publishConfig": {
+    "directory": "./dist",
+    "linkDirectory": false
+  },
+  "tsup": {
+    "entry": [
+      "src/index.tsx"
+    ],
+    "minify": true,
+    "dts": true,
+    "clean": true,
+    "tsconfig": "../../../../../tsconfig.base.json",
+    "external": [
+      "react",
+      "react-dom",
+      "react-native",
+      "styled-components",
+      "@mui/material"
+    ]
+  },
+  "scripts": {
+    "prepublishOnly": "tsup && node ../../../../../scripts/npmPrepublish/index.js"
+  }
+}
