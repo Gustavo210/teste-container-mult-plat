@@ -9,7 +9,7 @@ export default function Home() {
       <SkeletonHeader>
         <SkeletonHeaderText>HEADER</SkeletonHeaderText>
       </SkeletonHeader>
-      <Container gap="2XS" align="CENTER" debug>
+      <Container gap="2XS" align="CENTER" debug="red">
         <MyBox>
           <Text>
             <MyBoxText>1</MyBoxText>
@@ -114,9 +114,15 @@ const Step = () => {
   return (
     <>
       <SkeletonStep>
-        <Container direction="COLUMN" debug>
-          <Container align="CENTER" debug>
-            <Container size="4XL" align="CENTER" direction="ROW" noFlex debug>
+        <Container direction="COLUMN">
+          <Container align="CENTER">
+            <Container
+              size="4XL"
+              align="CENTER"
+              direction="ROW"
+              debug="blue"
+              noFlex
+            >
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
@@ -125,24 +131,23 @@ const Step = () => {
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
-          <Container align="CENTER">
+          <Container align="CENTER" debug="red">
             <Container size="4XL" align="RIGHT" direction="ROW" noFlex>
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
-          <Container align="CENTER">
-            <Container
-              size="4XL"
-              align="SPACE_BETWEEN"
-              direction="ROW"
-              noFlex
-              gap="NONE"
-            >
+          <Container align="CENTER" debug="red">
+            <Container size="4XL" align="SPACE_BETWEEN" direction="ROW">
               <Feather name="check-circle" size={20} color="#007bff" />
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
           <SkeletonTexto /> <SkeletonTextoSmall />
+          <Container>
+            <Container direction="ROW" gap="SM" size="XS" align="RIGHT">
+              <SkeletonTexto />
+            </Container>
+          </Container>
         </Container>
       </SkeletonStep>
     </>

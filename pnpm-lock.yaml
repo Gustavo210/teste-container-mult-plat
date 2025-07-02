@@ -12,8 +12,8 @@ importers:
         specifier: ^14.1.0
         version: 14.1.0(expo-font@13.3.1(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
       '@mobilestock-native/container':
-        specifier: ^0.0.42
-        version: 0.0.42
+        specifier: ^0.0.47
+        version: 0.0.47(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@mobilestock-native/tools':
         specifier: ^0.0.3
         version: 0.0.3(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
@@ -869,8 +869,12 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@mobilestock-native/container@0.0.42':
-    resolution: {integrity: sha512-4S2zoAe+UxikMfXm26w2zBz8QuaBtDSNeFsJX9ZOvA3c7y1NIn7KJ2JiZjsxwjY7e97GCCc6A1ldgCt2eqovRg==}
+  '@mobilestock-native/container@0.0.47':
+    resolution: {integrity: sha512-v4MXB14yWxtE3v9dnS2WXUVnj7ZppkCzVt5wemoI1OLEx8Cnc5aeq756pDqTJaz9fevsaVLt52KiHC4ybLzljQ==}
+    peerDependencies:
+      react: 18.2.0
+      react-native: 0.74.5
+      styled-components: ^6.1.8
 
   '@mobilestock-native/tools@0.0.2':
     resolution: {integrity: sha512-kwjEKK3HM24FGLuPGRZpaUz8/KwTZCtRZPwwGm0OLNZIbdrLqSAIuvC5TG2h+VtghswxtPJyTB2WhaoCS8KzkQ==}
@@ -5149,7 +5153,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mobilestock-native/container@0.0.42': {}
+  '@mobilestock-native/container@0.0.47(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+    dependencies:
+      '@mobilestock-native/tools': 0.0.3(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))
+      react: 19.0.0
+      react-native: 0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0)
+      styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   '@mobilestock-native/tools@0.0.2(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.0.14)(react@19.0.0))':
     dependencies:

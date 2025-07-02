@@ -1,4 +1,6 @@
-export function getAlignmentStyles($align, $noFlex) {
+import { css } from "styled-components";
+
+export function getAlignmentStyles($align: string, $noFlex: boolean) {
   if (!$align) return "";
 
   if ($noFlex) {
@@ -9,6 +11,7 @@ export function getAlignmentStyles($align, $noFlex) {
       SPACE_BETWEEN: "space-between",
     };
     const value = flexValues[$align];
+
     return value
       ? css`
           justify-content: ${value};

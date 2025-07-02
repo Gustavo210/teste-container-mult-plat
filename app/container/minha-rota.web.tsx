@@ -10,7 +10,7 @@ export default function Home() {
       <SkeletonHeader>
         <Text>HEADER</Text>
       </SkeletonHeader>
-      <WebContainer gapSize="XS">
+      <WebContainer gap="XS">
         <MyBox>1</MyBox>
         <MyBox>2</MyBox>
         <MyBox>3</MyBox>
@@ -33,7 +33,7 @@ const CardContainer = () => {
     <SkeletonCard>
       <WebContainer direction="COLUMN">
         <WebContainer>
-          <WebContainer direction="ROW" sizeKey="XS" align="CENTER">
+          <WebContainer direction="ROW" size="XS" align="CENTER">
             <SkeletonText />
           </WebContainer>
         </WebContainer>
@@ -41,14 +41,14 @@ const CardContainer = () => {
           <Step />
           <Step />
           <Step />
-          <Step />
+          <StepDroid />
         </WebContainer>
         <WebContainer direction="ROW">
           <SkeletonText />
           <SkeletonText />
         </WebContainer>
         <WebContainer direction="ROW">
-          <WebContainer sizeKey="MD" align="CENTER">
+          <WebContainer size="MD" align="CENTER">
             <SkeletonTextoSmall />
           </WebContainer>
         </WebContainer>
@@ -62,16 +62,76 @@ const Step = () => {
     <SkeletonStep>
       <WebContainer direction="COLUMN">
         <WebContainer>
-          <WebContainer align="CENTER" sizeKey="MD" direction="ROW" auto>
+          <WebContainer align="CENTER" size="MD" direction="ROW">
             <Feather name="check-circle" size={20} color="#007bff" />
           </WebContainer>
         </WebContainer>
         <SkeletonTexto /> <SkeletonTextoSmall />
-        <WebContainer direction="ROW" gapSize="SM" sizeKey="XS">
+        <WebContainer direction="ROW" gapSize="SM" size="XS">
           <SkeletonTexto />
         </WebContainer>
       </WebContainer>
     </SkeletonStep>
+  );
+};
+
+const StepDroid = () => {
+  return (
+    <>
+      <SkeletonStep>
+        <WebContainer direction="COLUMN" debug="red" gap="NONE">
+          <WebContainer align="CENTER" debug="blue">
+            <WebContainer
+              size="4XL"
+              align="CENTER"
+              direction="ROW"
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="4XL"
+              align="LEFT"
+              direction="ROW"
+              noFlex
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="4XL"
+              align="RIGHT"
+              direction="ROW"
+              noFlex
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="LG"
+              align="SPACE_BETWEEN"
+              direction="ROW"
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <SkeletonTexto /> <SkeletonTextoSmall />
+          <WebContainer>
+            <WebContainer direction="ROW" gap="SM" size="XS">
+              <SkeletonTexto />
+            </WebContainer>
+          </WebContainer>
+        </WebContainer>
+      </SkeletonStep>
+    </>
   );
 };
 
@@ -98,9 +158,10 @@ const SkeletonText = styled.span`
   background-color: #c9c9c9;
 `;
 const SkeletonCard = styled.div`
-  border: 1px solid #c9c9c9;
+  border: 1px solid Gold;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
 `;
 const SkeletonTextoSmall = styled.span`
   background-color: #d9d9d9;
@@ -121,6 +182,8 @@ const SkeletonTexto = styled.span`
 const SkeletonStep = styled.div`
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  display: flex;
+  flex: 1;
 `;
 const Botao = styled.button`
   background-color: #007bff;

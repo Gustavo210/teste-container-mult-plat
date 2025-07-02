@@ -6,7 +6,7 @@
     "start": "expo start"
   },
   "dependencies": {
-    "@mobilestock-native/container": "^0.0.42",
+    "@mobilestock-native/container": "^0.0.47",
     "@mobilestockweb/container": "^0.0.34",
     "@expo/vector-icons": "^14.1.0",
     "@mobilestock-native/tools": "^0.0.3",
