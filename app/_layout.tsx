@@ -1,10 +1,13 @@
 import { useFonts } from "expo-font";
-import { Stack, useNavigation, useRouter } from "expo-router";
+import { SplashScreen, Stack, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
 import { GlobalStyle } from "@/globals";
 import ThemeProvider from "@/themeProvider";
+import { theme } from "@/utils/theme/index.android";
+import tools from "@mobilestock-native/tools";
+import { useEffect } from "react";
 import {
   Button,
   Platform,
@@ -14,14 +17,21 @@ import {
   View,
 } from "react-native";
 
+SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const router = useRouter();
-  const t = useNavigation();
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-  });
 
-  if (!loaded) {
+  const [loaded, error] = useFonts(
+    tools.mapFamiliesToFonts([...theme.font.families])
+  );
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
     return null;
   }
 

@@ -3,7 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start"
+    "start": "expo start",
+    "create-route": "node create-route.js"
   },
   "dependencies": {
     "@mobilestock-native/container": "^0.0.47",
