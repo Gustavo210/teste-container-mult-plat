@@ -2,25 +2,31 @@
 import React from "react";
 import styled from "styled-components";
 
-type AlignProps = "LEFT" | "CENTER" | "RIGHT";
+type AlignProps = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";
 
 interface ColumnLayoutProps {
   children: React.ReactNode;
   gapSize?: string;
+  align?: AlignProps;
 }
 
 export default function ColumnLayout({
   children,
   gapSize = "NONE",
+  align = "LEFT",
 }: ColumnLayoutProps) {
-  return <ColumnContainer $gapSize={gapSize}>{children}</ColumnContainer>;
+  return (
+    <ColumnContainer $gapSize={gapSize} $align={align}>
+      {children}
+    </ColumnContainer>
+  );
 }
 
-const ColumnContainer = styled.div<{ $gapSize: string }>`
+const ColumnContainer = styled.div<{ $gapSize: string; $align: string }>`
   display: flex;
   flex-direction: column;
   gap: ${({ theme, $gapSize }) => theme.gaps[$gapSize.toLowerCase()]};
-  align-self: ${({ $align }) =>
+  align-items: ${({ $align }) =>
     $align === "CENTER"
       ? "center"
       : $align === "RIGHT"

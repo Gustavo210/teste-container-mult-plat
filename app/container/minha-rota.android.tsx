@@ -1,5 +1,5 @@
-// import { Container } from "@mobilestock-native/container";
-import { Container } from "@/Container/src";
+import { Container } from "@mobilestock-native/container";
+// import { Container } from "@/Container/src";
 import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components/native";
 
@@ -80,9 +80,15 @@ const CardContainer = () => {
   return (
     <>
       <SkeletonCard>
-        <Container direction="COLUMN">
-          <Container>
-            <Container direction="ROW" size="MD" align="CENTER">
+        <Container direction="COLUMN" id="AVO">
+          <Container id="PAI">
+            <Container
+              id="FILHO"
+              direction="ROW"
+              size="MD"
+              align="CENTER"
+              debug="#f0f"
+            >
               <SkeletonText />
             </Container>
           </Container>
@@ -105,6 +111,11 @@ const CardContainer = () => {
             </Container>
           </Container>
           <Botao title="TESTE" />
+        </Container>
+        <Container direction="ROW">
+          <Container size="SM" align="CENTER">
+            <SkeletonTextoSmall />
+          </Container>
         </Container>
       </SkeletonCard>
     </>
@@ -224,7 +235,8 @@ const SkeletonIcon = styled.View`
   background-color: #d9d9d9;
   height: 20px;
   /* width: 20px; */
-  width: 100%;
+  /* width: 100%; */
+  flex: 1;
   border-radius: 5px;
 `;
 const SkeletonTexto = styled.View`

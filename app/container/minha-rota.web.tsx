@@ -54,6 +54,12 @@ const CardContainer = () => {
         </WebContainer>
         <Botao>TESTE</Botao>
       </WebContainer>
+      <WebContainer>
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
+      </WebContainer>
     </SkeletonCard>
   );
 };
