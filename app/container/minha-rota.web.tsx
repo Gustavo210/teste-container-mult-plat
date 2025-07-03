@@ -1,12 +1,16 @@
-import Container from "@mobilestockweb/container";
+// import Container from "@mobilestockweb/container";
+import WebContainer from "@/WebContainer";
+import { Text } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components";
 
 export default function Home() {
   return (
     <>
-      <SkeletonHeader>HEADER</SkeletonHeader>
-      <Container gapSize="XS">
+      <SkeletonHeader>
+        <Text>HEADER</Text>
+      </SkeletonHeader>
+      <WebContainer gap="XS">
         <MyBox>1</MyBox>
         <MyBox>2</MyBox>
         <MyBox>3</MyBox>
@@ -19,7 +23,7 @@ export default function Home() {
         <MyBox>10</MyBox>
         <MyBox>11</MyBox>
         <MyBox>12</MyBox>
-      </Container>
+      </WebContainer>
       <CardContainer />
     </>
   );
@@ -27,44 +31,113 @@ export default function Home() {
 const CardContainer = () => {
   return (
     <SkeletonCard>
-      <Container direction="COLUMN" gapSize="NONE">
-        <Container>
-          <Container direction="ROW" sizeKey="XS" align="CENTER">
+      <WebContainer direction="COLUMN">
+        <WebContainer>
+          <WebContainer direction="ROW" size="XS" align="CENTER">
             <SkeletonText />
-          </Container>
-        </Container>
-        <Container>
+          </WebContainer>
+        </WebContainer>
+        <WebContainer>
           <Step />
           <Step />
           <Step />
-          <Step />
-        </Container>
-        <Container direction="ROW">
+          <StepDroid />
+        </WebContainer>
+        <WebContainer direction="ROW">
           <SkeletonText />
           <SkeletonText />
-        </Container>
-        <Container direction="ROW">
-          <Container sizeKey="MD" align="LEFT">
+        </WebContainer>
+        <WebContainer direction="ROW">
+          <WebContainer size="MD" align="CENTER">
             <SkeletonTextoSmall />
-          </Container>
-        </Container>
-        <Botao title="TESTE" />
-      </Container>
+          </WebContainer>
+        </WebContainer>
+        <Botao>TESTE</Botao>
+      </WebContainer>
+      <WebContainer>
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
+        <StepDiv />
+      </WebContainer>
     </SkeletonCard>
   );
 };
 const Step = () => {
   return (
     <SkeletonStep>
-      <Container direction="COLUMN">
-        <Container>
-          <Container align="CENTER" sizeKey="MD" direction="ROW" debug>
+      <WebContainer direction="COLUMN">
+        <WebContainer>
+          <WebContainer align="CENTER" size="MD" direction="ROW">
             <Feather name="check-circle" size={20} color="#007bff" />
-          </Container>
-        </Container>
+          </WebContainer>
+        </WebContainer>
         <SkeletonTexto /> <SkeletonTextoSmall />
-      </Container>
+        <WebContainer direction="ROW" gapSize="SM" size="XS">
+          <SkeletonTexto />
+        </WebContainer>
+      </WebContainer>
     </SkeletonStep>
+  );
+};
+
+const StepDroid = () => {
+  return (
+    <>
+      <SkeletonStep>
+        <WebContainer direction="COLUMN" debug="red" gap="NONE">
+          <WebContainer align="CENTER" debug="blue">
+            <WebContainer
+              size="4XL"
+              align="CENTER"
+              direction="ROW"
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="4XL"
+              align="LEFT"
+              direction="ROW"
+              noFlex
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="4XL"
+              align="RIGHT"
+              direction="ROW"
+              noFlex
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <WebContainer align="CENTER">
+            <WebContainer
+              size="LG"
+              align="SPACE_BETWEEN"
+              direction="ROW"
+              debug="magenta"
+            >
+              <Feather name="check-circle" size={20} color="#007bff" />
+              <Feather name="check-circle" size={20} color="#007bff" />
+            </WebContainer>
+          </WebContainer>
+          <SkeletonTexto /> <SkeletonTextoSmall />
+          <WebContainer>
+            <WebContainer direction="ROW" gap="SM" size="XS">
+              <SkeletonTexto />
+            </WebContainer>
+          </WebContainer>
+        </WebContainer>
+      </SkeletonStep>
+    </>
   );
 };
 
@@ -91,9 +164,10 @@ const SkeletonText = styled.span`
   background-color: #c9c9c9;
 `;
 const SkeletonCard = styled.div`
-  border: 1px solid #c9c9c9;
+  border: 1px solid Gold;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
 `;
 const SkeletonTextoSmall = styled.span`
   background-color: #d9d9d9;
@@ -103,7 +177,7 @@ const SkeletonTextoSmall = styled.span`
 const SkeletonIcon = styled.div`
   background-color: #d9d9d9;
   height: 20px;
-  /* width: 20px; */
+  width: 20px;
   border-radius: 5px;
 `;
 const SkeletonTexto = styled.span`
@@ -114,6 +188,8 @@ const SkeletonTexto = styled.span`
 const SkeletonStep = styled.div`
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  display: flex;
+  flex: 1;
 `;
 const Botao = styled.button`
   background-color: #007bff;

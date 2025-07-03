@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container component tests should align content to center visually with align="CENTER" 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Centralizado
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should align content to the right visually with align="RIGHT" 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "marginLeft": "auto",
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Right Aligned
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should apply default gapSize (MD) when gap is not provided 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Child 1
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Child 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should apply flex-basis when sizeKey is provided 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Sized
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should apply specific gap when gap="LG" 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 20,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      With LG Gap
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Another
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should fallback to 0px gap when gap is invalid 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": "px",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Invalid Gap
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Another
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should fallback to 1 column if theme.columns[size] is undefined 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Fallback Columns
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should match snapshot with default variant 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Default
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should match snapshot with direction="ROW" 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Row
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should match snapshot with variant="BOX" and direction="COLUMN" 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "column",
+      "gap": 0,
+      "width": "100%",
+    }
+  }
+>
+  <Text>
+    Box Column
+  </Text>
+</View>
+`;
+
+exports[`Container component tests should match snapshot with variant="MAIN" 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "position": "relative",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "column",
+        "paddingBottom": 12,
+        "paddingLeft": 4,
+        "paddingRight": 4,
+        "paddingTop": 0,
+        "width": "100%",
+      }
+    }
+  >
+    <Text>
+      Main Variant
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Container component tests should skip invalid children 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Valid
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ContainerBox component tests should trigger availableSpace and calculate childAvailableSpace 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "marginRight": "auto",
+        "width": 152,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Child
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ContainerBox component tests should trigger onLayout and calculate available space 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "width": 142,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 16,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
+        }
+        testID="flex-item-wrapper"
+      >
+        <Text>
+          Layout Event
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ContainerBox component tests should use default props when none are provided 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "flexDirection": "row",
+      "gap": 16,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+    testID="flex-item-wrapper"
+  >
+    <Text>
+      Default Props
+    </Text>
+  </View>
+</View>
+`;
