@@ -11,33 +11,24 @@ importers:
       '@expo/vector-icons':
         specifier: ^14.1.0
         version: 14.1.0(expo-font@13.3.1(expo@53.0.13(@babel/core@7.27.7)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)))(react-native-webview@13.13.5(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0))(react@19.0.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)
-      '@mobilestock-native/container':
-        specifier: ^0.0.0
-        version: 0.0.0
       '@mobilestock-native/image':
-        specifier: ^0.0.0
-        version: 0.0.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@mobilestock-native/spacer':
-        specifier: ^0.0.2
-        version: 0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@mobilestock-native/tools':
-        specifier: ^0.0.4
-        version: 0.0.4(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
-      '@mobilestock-native/typography':
         specifier: ^0.0.1
-        version: 0.0.1(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@mobilestockweb/container':
-        specifier: ^0.0.0
-        version: 0.0.0
+        version: 0.0.1(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+      '@mobilestock-native/spacer':
+        specifier: ^0.0.4
+        version: 0.0.4(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+      '@mobilestock-native/tools':
+        specifier: ^0.0.3
+        version: 0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
+      '@mobilestock-native/typography':
+        specifier: ^0.0.3
+        version: 0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@mobilestockweb/image':
-        specifier: ^0.0.0
-        version: 0.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
+        specifier: ^0.0.1
+        version: 0.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@mobilestockweb/lazy-image':
         specifier: ^0.0.10
         version: 0.0.10(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@mobilestockweb/list':
-        specifier: ^0.0.0
-        version: 0.0.0(react-dom@19.0.0(react@19.0.0))(react-icons@5.5.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@mobilestockweb/spacer':
         specifier: ^1.0.1
         version: 1.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -882,43 +873,32 @@ packages:
   '@jridgewell/trace-mapping@0.3.27':
     resolution: {integrity: sha512-VO95AxtSFMelbg3ouljAYnfvTEwSWVt/2YLf+U5Ejd8iT5mXE2Sa/1LGyvySMne2CGsepGLI7KpF3EzE3Aq9Mg==}
 
-  '@mobilestock-native/container@0.0.0':
-    resolution: {integrity: sha512-35TtnL2A3TN6LVNdLmuIDaWBKh2YJKXZujzmeUl2G/DZbNa1TVzOHGTe86quatnuY0KAdnCmHc+7JRY7bP/0TA==}
-
-  '@mobilestock-native/image@0.0.0':
-    resolution: {integrity: sha512-iaOoPwaLbEfkKGNtskcvulrSfYB9SFp/iCDb0awXeo/4NSbB/ZOkBj5JOj3Y+k39gmn6p995AzBcNeduB4ydEA==}
+  '@mobilestock-native/image@0.0.1':
+    resolution: {integrity: sha512-GrkbpPK3fD79ghOsIBczF6fjpYEmrQFVPeZwYszSvKeV+FpSIomDV7rwVH5lmCBUKCPnHtyl1a+NTVLIvMRaDA==}
     peerDependencies:
       react: 18.2.0
       react-native: 0.74.5
       styled-components: ^6.1.8
 
-  '@mobilestock-native/spacer@0.0.2':
-    resolution: {integrity: sha512-OyBx3uNLIJbs4TL/CiRUO9F5C4DQyZlUezhMLBnfz7Pn0/rhhEInIDEK5kBzaj5eJXZLMAzemVfEcF4Jql4aUA==}
+  '@mobilestock-native/spacer@0.0.4':
+    resolution: {integrity: sha512-jn5e3nxgK2o6heniI7ALPBq+Q/Pm5nxlCWJin3Jg2yNHGCs6oi84O2L8VRrbquOFwJTZDmLLH4/Crl5G3ddffA==}
     peerDependencies:
       react-native: 0.74.5
       styled-components: ^6.1.8
 
-  '@mobilestock-native/tools@0.0.2':
-    resolution: {integrity: sha512-xwKqsde4CbQyM940pr8AU36dJzq48s8gc6B5AV+HMQddOduwnrRJat6iqYImuFT3EGRHK//pXAg60oJk2JUeoA==}
+  '@mobilestock-native/tools@0.0.3':
+    resolution: {integrity: sha512-cWUOJJeHDaMTnuvZE6/E02L2w4UCmJfvB/ZheVJ+dR8w8coptTm1n/tGQ5UKmYzzlC4FIJt/0kmKzCvquTgZqA==}
     peerDependencies:
       react-native: 0.74.5
 
-  '@mobilestock-native/tools@0.0.4':
-    resolution: {integrity: sha512-CS6gUoarE4+5AP9R0sLzm/vsz5jQnJz3pVhkONjlz00FC+9jb6YbAoeNACIH8+sJJiMp28JRjxNTSA13DVrBRQ==}
-    peerDependencies:
-      react-native: 0.74.5
-
-  '@mobilestock-native/typography@0.0.1':
-    resolution: {integrity: sha512-ktGHFNL24sdtu6cJOGSiWE+GWhZocpbpxomSwwPIrWaaJLP/9NzDdKRM7csu+xhLZEZCGvZ/7OtQkuqVM0R1DQ==}
+  '@mobilestock-native/typography@0.0.3':
+    resolution: {integrity: sha512-SSxvHu0cUSvk0cvJOkhh/jTFNq8DcB3Srhhi2IGwKbMhtK/zEjS4kd2heFD0m+tvHoOlJ8HprlG4y/bED7CAxA==}
     peerDependencies:
       react-native: 0.74.5
       styled-components: ^6.1.8
 
-  '@mobilestockweb/container@0.0.0':
-    resolution: {integrity: sha512-tx7oAik6zbeX1m4LVdviaSxEin6z8lmdkYaIRXW7cH/w9Es99A+/8vwLEDyMwuEJCaXaV0YR7G5oxShTuaflng==}
-
-  '@mobilestockweb/image@0.0.0':
-    resolution: {integrity: sha512-qb5UMJtvAALgJip2E9ttSmVE9IPfJ1G+9QnEvnkBt3F80PwZADNcJF8YyRvrT0vylCH4X6j53pKQgjfG/7vO5g==}
+  '@mobilestockweb/image@0.0.1':
+    resolution: {integrity: sha512-309cTBAZ05kW3tg8cyWTA86xgfNPPgwSxIpB7wUPn+QdriGlgBkNrdI7qsO4wBhid1Z+Ok6JMlIfp0WbXvWj3A==}
     peerDependencies:
       styled-components: ^6.1.8
 
@@ -927,21 +907,6 @@ packages:
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
-
-  '@mobilestockweb/list@0.0.0':
-    resolution: {integrity: sha512-ZhRvzNRHmRJtro/7vRUZ8nngLptz7kaoBTL1RMyfx4xnuOBpuSevSryNjIwtJPlRvg8jlygrK+HCVwJX+/2sAg==}
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-      styled-components: ^6.1.8
-
-  '@mobilestockweb/loading-spinner@0.0.6':
-    resolution: {integrity: sha512-gyEQ6GqBp7DDsJ/KzKRRRAqep5s/SEcNUDLcYr9hu6dREV94rOlm4WnAewNJBzYV0iuANX+eEbBhhUuXhbALQQ==}
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-      react-icons: ^5.3.0
-      styled-components: ^6.1.8
 
   '@mobilestockweb/spacer@1.0.1':
     resolution: {integrity: sha512-19Xi6GSsLUAnRaq9EHF0EV6ndOTWPZUTfeJf3n8XeixIn9vQ9xO6/IeUwWwTEtCs9WoUxzF/rPOlEf8btRRmdQ==}
@@ -3353,11 +3318,6 @@ packages:
     peerDependencies:
       react: '>=17.0.0'
 
-  react-icons@5.5.0:
-    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
-    peerDependencies:
-      react: '*'
-
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -5213,38 +5173,30 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.2
 
-  '@mobilestock-native/container@0.0.0': {}
-
-  '@mobilestock-native/image@0.0.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@mobilestock-native/image@0.0.1(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
-      '@mobilestock-native/tools': 0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
+      '@mobilestock-native/tools': 0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
       react: 19.0.0
       react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)
       styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  '@mobilestock-native/spacer@0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@mobilestock-native/spacer@0.0.4(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
-      '@mobilestock-native/tools': 0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
+      '@mobilestock-native/tools': 0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
       react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)
       styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  '@mobilestock-native/tools@0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))':
+  '@mobilestock-native/tools@0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))':
     dependencies:
       react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)
 
-  '@mobilestock-native/tools@0.0.4(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))':
+  '@mobilestock-native/typography@0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
-      react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)
-
-  '@mobilestock-native/typography@0.0.1(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
-    dependencies:
-      '@mobilestock-native/tools': 0.0.2(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
+      '@mobilestock-native/tools': 0.0.3(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0))
       react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.0.14)(react@19.0.0)
       styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  '@mobilestockweb/container@0.0.0': {}
-
-  '@mobilestockweb/image@0.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+  '@mobilestockweb/image@0.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
       '@mobilestockweb/lazy-image': 0.0.10(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -5257,23 +5209,6 @@ snapshots:
       '@mobilestockweb/tools': 0.0.11
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-
-  '@mobilestockweb/list@0.0.0(react-dom@19.0.0(react@19.0.0))(react-icons@5.5.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
-    dependencies:
-      '@mobilestockweb/loading-spinner': 0.0.6(react-dom@19.0.0(react@19.0.0))(react-icons@5.5.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      '@mobilestockweb/typography': 0.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-    transitivePeerDependencies:
-      - react-icons
-
-  '@mobilestockweb/loading-spinner@0.0.6(react-dom@19.0.0(react@19.0.0))(react-icons@5.5.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
-    dependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      react-icons: 5.5.0(react@19.0.0)
-      styled-components: 6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   '@mobilestockweb/spacer@1.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
     dependencies:
@@ -6542,9 +6477,9 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 8.35.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0)(typescript@5.8.3)
       '@typescript-eslint/parser': 8.35.0(eslint@9.30.0)(typescript@5.8.3)
       eslint: 9.30.0
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.30.0)
       eslint-plugin-expo: 0.1.4(eslint@9.30.0)(typescript@5.8.3)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0))(eslint@9.30.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.0)
       eslint-plugin-react: 7.37.5(eslint@9.30.0)
       eslint-plugin-react-hooks: 5.2.0(eslint@9.30.0)
       globals: 16.2.0
@@ -6562,7 +6497,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.30.0):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.1
@@ -6573,18 +6508,18 @@ snapshots:
       tinyglobby: 0.2.14
       unrs-resolver: 1.9.2
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0))(eslint@9.30.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0))(eslint@9.30.0):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.35.0(eslint@9.30.0)(typescript@5.8.3)
       eslint: 9.30.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.30.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6597,7 +6532,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0))(eslint@9.30.0):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -6608,7 +6543,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.30.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint@9.30.0))(eslint@9.30.0))(eslint@9.30.0)
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.35.0(eslint@9.30.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.0)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -8101,10 +8036,6 @@ snapshots:
   react-fast-compare@3.2.2: {}
 
   react-freeze@1.0.4(react@19.0.0):
-    dependencies:
-      react: 19.0.0
-
-  react-icons@5.5.0(react@19.0.0):
     dependencies:
       react: 19.0.0
 
