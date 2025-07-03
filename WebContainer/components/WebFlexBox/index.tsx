@@ -25,7 +25,7 @@ function getWidthCalc(
   const gap = theme.gaps[gapSize.toLowerCase()];
 
   if (breakpoint === "desktop") {
-    return `width: calc((73.5rem - (${gap} * 11)) / 12 * ${col} + (${gap} * (${
+    return `width: calc((100% - (${gap} * 11)) / 12 * ${col} + (${gap} * (${
       col - 1
     })));`;
   }
