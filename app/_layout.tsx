@@ -39,6 +39,7 @@ export default function RootLayout() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <ThemeProvider>
         <Stack
+          initialRouteName="index"
           screenOptions={{
             headerTitle: (props) => {
               return (
@@ -97,8 +98,13 @@ export default function RootLayout() {
             },
             title: "Expo Router",
           }}
-          initialRouteName="index"
         >
+          <Stack.Screen
+            name="index"
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen name="+not-found" />
           <Stack.Screen
             name="configs"
