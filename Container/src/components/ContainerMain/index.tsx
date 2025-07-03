@@ -2,18 +2,18 @@ import React from "react";
 import { View } from "react-native";
 import styled, { useTheme } from "styled-components/native";
 
-interface LayoutProps {
+interface ContainerMainProps {
   children: React.ReactNode;
   debug?: boolean | string;
 }
 
-export function Layout(props: LayoutProps): JSX.Element {
+export function ContainerMain({ children, debug = false }: ContainerMainProps) {
   const theme = useTheme();
 
   return (
     <View style={{ flex: 1, position: "relative" }}>
-      <PageWrapper>{props.children}</PageWrapper>
-      {props.debug && (
+      <PageWrapper>{children}</PageWrapper>
+      {debug && (
         <ColumnContainer>
           {Array.from({
             length: Math.max(
@@ -22,7 +22,7 @@ export function Layout(props: LayoutProps): JSX.Element {
               )
             ),
           }).map((_, index) => (
-            <VirtualizedColumn key={index} />
+            <VirtualizedColumn key={index} debug={debug} />
           ))}
         </ColumnContainer>
       )}
@@ -49,9 +49,14 @@ const ColumnContainer = styled.View`
 
 const VirtualizedColumn = styled.View.attrs({
   testID: "virtual-column",
-})`
+})<{ debug: boolean | string }>`
   flex: 1;
-  background-color: #c8348848;
+  background-color: ${({ debug, theme }) =>
+    typeof debug === "string"
+      ? `${debug}`
+      : theme.colors.container.visibleArea};
   opacity: 0.3;
-  border: 1px dashed #c83488;
+  border: 1px dashed
+    ${({ debug, theme }) =>
+      typeof debug === "string" ? debug : theme.colors.container.visibleArea};
 `;

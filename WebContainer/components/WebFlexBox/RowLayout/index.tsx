@@ -8,6 +8,7 @@ interface RowLayoutProps {
   children: React.ReactNode;
   align?: AlignProps;
   gapSize?: string;
+  noFlex?: boolean;
 }
 
 export function alignmentStyle(
@@ -54,7 +55,6 @@ const RowContainer = styled.div<{ $align: AlignProps; $gapSize: string }>`
   /* justify-content: flex-end; */
   ${({ $align }) => {
     const teste = alignmentStyle($align);
-    console.log("teste", $align, teste);
     return teste;
   }}
 `;

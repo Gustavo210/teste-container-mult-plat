@@ -1,16 +1,16 @@
 import React from "react";
 import { DefaultTheme } from "styled-components/native";
 
-import { FlexBox } from "./components/FlexBox";
-import { Layout } from "./components/Layout";
+import { ContainerBox } from "./components/ContainerBox";
+import { ContainerMain } from "./components/ContainerMain";
 
-type ContainerAlign = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";
+export type AlignOptions = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";
 
 interface ContainerProps {
   children: React.ReactNode;
   variant?: "MAIN" | "BOX";
   direction?: "ROW" | "COLUMN";
-  align?: ContainerAlign;
+  align?: AlignOptions;
   size?: Uppercase<keyof DefaultTheme["columns"] & string>;
   gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
   noFlex?: boolean;
@@ -26,13 +26,13 @@ export function Container({
   gap,
   noFlex = false,
   debug = false,
-}: ContainerProps): JSX.Element {
+}: ContainerProps) {
   if (variant === "MAIN") {
-    return <Layout debug={debug}>{children}</Layout>;
+    return <ContainerMain debug={debug}>{children}</ContainerMain>;
   }
 
   return (
-    <FlexBox
+    <ContainerBox
       direction={direction}
       align={align}
       sizeKey={size}
@@ -41,6 +41,6 @@ export function Container({
       debug={debug}
     >
       {children}
-    </FlexBox>
+    </ContainerBox>
   );
 }

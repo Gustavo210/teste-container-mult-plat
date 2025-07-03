@@ -1,5 +1,5 @@
-// import { Container } from "@mobilestock-native/container";
-import { Container } from "@/Container/src";
+import { Container } from "@mobilestock-native/container";
+// import { Container } from "@/Container/src";
 import Feather from "react-native-vector-icons/Feather";
 import { styled } from "styled-components/native";
 
@@ -9,7 +9,7 @@ export default function Home() {
       <SkeletonHeader>
         <SkeletonHeaderText>HEADER</SkeletonHeaderText>
       </SkeletonHeader>
-      <Container gap="2XS" align="CENTER" debug>
+      <Container gap="2XS" align="CENTER" debug="red">
         <MyBox>
           <Text>
             <MyBoxText>1</MyBoxText>
@@ -80,9 +80,15 @@ const CardContainer = () => {
   return (
     <>
       <SkeletonCard>
-        <Container direction="COLUMN">
-          <Container>
-            <Container direction="ROW" size="MD" align="CENTER">
+        <Container direction="COLUMN" id="AVO">
+          <Container id="PAI">
+            <Container
+              id="FILHO"
+              direction="ROW"
+              size="MD"
+              align="CENTER"
+              debug="#f0f"
+            >
               <SkeletonText />
             </Container>
           </Container>
@@ -106,6 +112,11 @@ const CardContainer = () => {
           </Container>
           <Botao title="TESTE" />
         </Container>
+        <Container direction="ROW">
+          <Container size="SM" align="CENTER">
+            <SkeletonTextoSmall />
+          </Container>
+        </Container>
       </SkeletonCard>
     </>
   );
@@ -114,9 +125,15 @@ const Step = () => {
   return (
     <>
       <SkeletonStep>
-        <Container direction="COLUMN" debug>
-          <Container align="CENTER" debug>
-            <Container size="4XL" align="CENTER" direction="ROW" noFlex debug>
+        <Container direction="COLUMN">
+          <Container align="CENTER">
+            <Container
+              size="4XL"
+              align="CENTER"
+              direction="ROW"
+              debug="blue"
+              noFlex
+            >
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
@@ -125,24 +142,23 @@ const Step = () => {
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
-          <Container align="CENTER">
+          <Container align="CENTER" debug="red">
             <Container size="4XL" align="RIGHT" direction="ROW" noFlex>
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
-          <Container align="CENTER">
-            <Container
-              size="4XL"
-              align="SPACE_BETWEEN"
-              direction="ROW"
-              noFlex
-              gap="NONE"
-            >
+          <Container align="CENTER" debug="red">
+            <Container size="4XL" align="SPACE_BETWEEN" direction="ROW">
               <Feather name="check-circle" size={20} color="#007bff" />
               <Feather name="check-circle" size={20} color="#007bff" />
             </Container>
           </Container>
           <SkeletonTexto /> <SkeletonTextoSmall />
+          <Container>
+            <Container direction="ROW" gap="SM" size="XS" align="RIGHT">
+              <SkeletonTexto />
+            </Container>
+          </Container>
         </Container>
       </SkeletonStep>
     </>
@@ -219,7 +235,8 @@ const SkeletonIcon = styled.View`
   background-color: #d9d9d9;
   height: 20px;
   /* width: 20px; */
-  width: 100%;
+  /* width: 100%; */
+  flex: 1;
   border-radius: 5px;
 `;
 const SkeletonTexto = styled.View`

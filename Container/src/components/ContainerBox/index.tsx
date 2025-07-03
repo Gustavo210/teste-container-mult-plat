@@ -2,30 +2,34 @@ import React, { useState } from "react";
 import { LayoutChangeEvent } from "react-native";
 import styled, { DefaultTheme, css, useTheme } from "styled-components/native";
 
-import { calculateAvailableSpace, getAlignmentStyles } from "../utils";
-import ColumnLayout from "./components/ColumnLayout";
-import RowLayout from "./components/RowLayout";
+import { AlignOptions } from "../..";
+import ColumnContainer from "../ColumnContainer";
+import RowContainer from "../RowContainer";
+import {
+  AlignFlexItems,
+  AlignNoFlexItems,
+  calculateAvailableSpace,
+  getAlignmentStyles,
+} from "../utils";
 
-type AlignProps = "LEFT" | "CENTER" | "RIGHT" | "SPACE_BETWEEN";
-
-export interface FlexBoxProps {
+export interface ContainerBoxProps {
   children: React.ReactNode;
   direction?: "ROW" | "COLUMN";
   sizeKey?: Uppercase<keyof DefaultTheme["columns"] & string>;
   gapSize?: Uppercase<keyof DefaultTheme["gaps"] & string>;
-  align?: AlignProps;
+  align?: AlignOptions;
   noFlex?: boolean;
   debug?: boolean | string;
 }
 
-export function FlexBox({
+export function ContainerBox({
   children,
   direction = "ROW",
   gapSize,
   align,
   noFlex = false,
   debug = false,
-}: FlexBoxProps): JSX.Element {
+}: ContainerBoxProps) {
   const theme = useTheme();
   const [containerWidth, setContainerWidth] = useState(0);
   const isRow = direction === "ROW";
@@ -39,7 +43,7 @@ export function FlexBox({
 
   if (direction === "ROW") {
     return (
-      <RowLayout
+      <RowContainer
         gapSize={gapSizeValue}
         align={align}
         onLayout={onLayoutContainer}
@@ -71,26 +75,28 @@ export function FlexBox({
             </FlexItem>
           );
         })}
-      </RowLayout>
+      </RowContainer>
     );
   }
 
-  return <ColumnLayout gapSize={gapSizeValue}>{children}</ColumnLayout>;
+  return <ColumnContainer gapSize={gapSizeValue}>{children}</ColumnContainer>;
 }
 
 const FlexItem = styled.View.attrs({ testID: "flex-item-wrapper" })<{
-  $align?: AlignProps;
+  $align?: AlignOptions;
   $direction?: "ROW" | "COLUMN";
   $availableSpace?: number;
   $noFlex?: boolean;
   $debug?: boolean | string;
 }>`
-  ${({ $debug }) =>
+  ${({ $debug, theme }) =>
     $debug &&
     css`
       border-width: 1px;
-      border-color: red;
       border-style: solid;
+      border-color: ${typeof $debug === "string"
+        ? $debug
+        : theme.colors.container.visibleArea};
     `}
 
   ${({ $availableSpace, $noFlex }) => {
@@ -111,5 +117,7 @@ const FlexItem = styled.View.attrs({ testID: "flex-item-wrapper" })<{
     `;
   }}
 
-${({ $align, $noFlex }) => getAlignmentStyles($align, $noFlex)}
+    ${({ $align, $noFlex }) =>
+    $noFlex ? AlignFlexItems($align) : AlignNoFlexItems($align)};
+  /* ${({ $align, $noFlex }) => getAlignmentStyles($align, $noFlex)} */
 `;

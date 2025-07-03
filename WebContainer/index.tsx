@@ -9,10 +9,10 @@ export interface ContainerProps {
   variant?: "MAIN" | "BOX";
   direction?: "ROW" | "COLUMN";
   align?: AlignProps;
-  sizeKey?: Uppercase<keyof DefaultTheme["columns"] & string>;
-  gapSize?: Uppercase<keyof DefaultTheme["gaps"] & string>;
+  size?: Uppercase<keyof DefaultTheme["columns"] & string>;
+  gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
   noFlex?: boolean;
-  debug?: boolean;
+  debug?: boolean | string;
 }
 
 export default function WebContainer(props: ContainerProps): JSX.Element {
@@ -24,10 +24,8 @@ export default function WebContainer(props: ContainerProps): JSX.Element {
     <WebFlexBox
       direction={props.direction}
       align={props.align}
-      sizeKey={props.sizeKey?.toLowerCase()}
-      gapSize={props.gapSize}
-      noFlex={props.noFlex}
-      debug={props.debug}
+      sizeKey={props.size?.toLowerCase()}
+      gapSize={props.gap}
     >
       {props.children}
     </WebFlexBox>

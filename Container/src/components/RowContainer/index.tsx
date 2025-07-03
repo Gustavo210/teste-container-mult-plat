@@ -2,32 +2,32 @@ import React from "react";
 import { LayoutChangeEvent } from "react-native";
 import styled, { css } from "styled-components/native";
 
-import { FlexBoxProps } from "../..";
-import { getAlignmentStyles } from "../../../utils";
+import { AlignOptions } from "../..";
+import { AlignFlexItems } from "../utils";
 
-interface RowLayoutProps {
+interface RowContainerProps {
   children: React.ReactNode;
   gapSize: string;
-  align?: FlexBoxProps["align"];
+  align?: AlignOptions;
   onLayout(event: LayoutChangeEvent): void;
 }
 
-export default function RowLayout({
+export default function RowContainer({
   children,
   gapSize,
   align,
   onLayout,
-}: RowLayoutProps) {
+}: RowContainerProps) {
   return (
-    <RowContainer $gapSize={gapSize} $align={align} onLayout={onLayout}>
+    <ViewRow $gapSize={gapSize} $align={align} onLayout={onLayout}>
       {children}
-    </RowContainer>
+    </ViewRow>
   );
 }
 
-const RowContainer = styled.View<{
+const ViewRow = styled.View<{
   $gapSize: string;
-  $align?: FlexBoxProps["align"];
+  $align?: AlignOptions;
 }>`
   flex-direction: row;
 
@@ -35,5 +35,5 @@ const RowContainer = styled.View<{
     gap: ${theme.gaps[$gapSize.toLowerCase()]}px;
   `}
 
-  ${({ $align }) => getAlignmentStyles($align, true)}
+  ${({ $align }) => AlignFlexItems($align)}
 `;

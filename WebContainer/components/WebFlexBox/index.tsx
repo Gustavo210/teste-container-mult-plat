@@ -11,6 +11,7 @@ interface FlexBoxProps {
   sizeKey?: string;
   gapSize?: string;
   debug?: boolean;
+  noFlex?: boolean;
 }
 
 function getWidthCalc(
@@ -45,6 +46,7 @@ const FlexBoxContainer = styled.div<{
   $sizeKey?: string;
   $gapSize: string;
   $debug?: boolean;
+  $noFlex?: boolean;
 }>`
   width: 100%;
 
@@ -61,21 +63,21 @@ const FlexBoxContainer = styled.div<{
       getWidthCalc($sizeKey, $gapSize, theme, "mobile")}
   }
 
-  ${({ $debug }) => `
-    ${
-      $debug
-        ? css`
-            border: 1px solid red;
-          `
-        : ""
-    }
-  `}
+  ${({ $debug }) =>
+    $debug &&
+    css`
+      border: 1px solid red;
+    `}
 
-  & > * > * {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
+  ${({ $noFlex }) =>
+    !$noFlex &&
+    css`
+      & > * > * {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+    `}
 `;
 
 export default function FlexBox({
@@ -85,15 +87,23 @@ export default function FlexBox({
   sizeKey,
   gapSize = "MD",
   debug = false,
-}: FlexBoxProps): JSX.Element {
+  noFlex = false,
+}: FlexBoxProps) {
   return (
-    <FlexBoxContainer $sizeKey={sizeKey} $gapSize={gapSize} $debug={debug}>
+    <FlexBoxContainer
+      $sizeKey={sizeKey}
+      $gapSize={gapSize}
+      $debug={debug}
+      $noFlex={noFlex}
+    >
       {direction === "ROW" ? (
         <RowLayout align={align} gapSize={gapSize}>
           {children}
         </RowLayout>
       ) : (
-        <ColumnLayout gapSize={gapSize}>{children}</ColumnLayout>
+        <ColumnLayout align={align} gapSize={gapSize}>
+          {children}
+        </ColumnLayout>
       )}
     </FlexBoxContainer>
   );
