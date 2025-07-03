@@ -11,6 +11,30 @@ function formatComponentNameForRoute(name) {
   return name.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
 }
 
+function updateRotesJson(routeName) {
+  const rotesJsonPath = path.join(process.cwd(), "rotes.json");
+
+  try {
+    let rotes = [];
+    if (fs.existsSync(rotesJsonPath)) {
+      const fileContent = fs.readFileSync(rotesJsonPath, "utf8");
+      rotes = fileContent ? JSON.parse(fileContent) : [];
+    }
+
+    const newRoute = `/${routeName}`;
+    if (!rotes.includes(newRoute)) {
+      rotes.push(newRoute);
+      fs.writeFileSync(rotesJsonPath, JSON.stringify(rotes, null, 2));
+      console.log(`Rota '${newRoute}' adicionada a rotes.json.`);
+    } else {
+      console.log(
+        `Rota '${newRoute}' já existe em rotes.json. Nenhuma alteração feita.`
+      );
+    }
+  } catch (error) {
+    console.error(`Erro ao atualizar rotes.json: ${error.message}`);
+  }
+}
 rl.question(
   "Qual o nome do componente que você quer testar? ",
   (componentName) => {
@@ -101,27 +125,6 @@ const WebContainer = styled.div\`\`;
 
     rl.close();
 
-    // Update app/index.tsx with the new route
-    const appIndexPath = path.join(process.cwd(), "app", "index.tsx");
-    fs.readFile(appIndexPath, "utf8", (err, data) => {
-      if (err) {
-        console.error(`Erro ao ler app/index.tsx: ${err}`);
-        return;
-      }
-
-      const newRouteEntry = `    "/${routeName}",`;
-      const updatedContent = data.replace(
-        /const navigationButtons: AppRoutes\[\] = \[([^\]]*)\];/,
-        `const navigationButtons: AppRoutes[] = [$1\n${newRouteEntry}\n];`
-      );
-
-      fs.writeFile(appIndexPath, updatedContent, "utf8", (err) => {
-        if (err) {
-          console.error(`Erro ao escrever em app/index.tsx: ${err}`);
-          return;
-        }
-        console.log(`Rota '/${routeName}' adicionada a app/index.tsx.`);
-      });
-    });
+    updateRotesJson(routeName);
   }
 );
