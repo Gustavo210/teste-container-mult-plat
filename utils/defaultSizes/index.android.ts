@@ -18,6 +18,10 @@ export const defaultSizes = {
     xl: tools.calculateSpacing("1.75rem"),
     "2xl": tools.calculateSpacing("1.875rem"),
     "3xl": tools.calculateSpacing("2rem"),
+    "4xl": tools.calculateSpacing("2.25rem"),
+    "5xl": tools.calculateSpacing("2.5rem"),
+    "6xl": tools.calculateSpacing("2.75rem"),
+    "7xl": tools.calculateSpacing("3rem"),
   },
   columns: {
     xs: 1,
