@@ -89,31 +89,19 @@ export default function IndexAndroid() {
             </Item>
           </View>
         </ScrollContainer>
-
-        <View
-          style={{
-            marginBottom: 64,
-            // width: "25%",
-            position: "absolute",
-            bottom: 20,
-            borderStyle: "solid",
-            borderWidth: 1,
-            borderColor: "black",
-            alignItems: "center",
-            paddingHorizontal: 16,
-            alignSelf: "flex-end",
-          }}
-        >
+        <Footer.ActionArea>
           <FloatButton>
             <Typography size="XS">Float</Typography>
           </FloatButton>
           <FloatButton>
             <Typography size="XS">Float</Typography>
           </FloatButton>
+        </Footer.ActionArea>
+        <Footer.ActionArea align="RIGHT">
           <FloatButton>
             <Typography size="XS">Float</Typography>
           </FloatButton>
-        </View>
+        </Footer.ActionArea>
         <Footer>
           <ContainerA selecionado={true}>
             <ContainerAIcone>{/* ícone aqui */}</ContainerAIcone>
@@ -159,11 +147,11 @@ const ContainerA = styled.TouchableOpacity<{ selecionado: boolean }>`
   position: relative;
   background-color: skyblue;
   flex: 1;
+  border: 1px solid blue;
 `;
 
 const ContainerAIcone = styled.View`
   position: absolute;
-  /* bottom: 48px; */
   left: 50%;
   transform: translateX(-24px);
   background-color: purple;
@@ -173,6 +161,7 @@ const ContainerAIcone = styled.View`
   padding: 16px;
   height: 64px;
   width: 56px;
+  flex: 1;
 `;
 
 const ContainerATitulo = styled.Text`
