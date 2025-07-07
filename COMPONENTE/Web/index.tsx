@@ -1,6 +1,8 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
 import { Main } from "./components/Main";
+import { X } from "./components/X";
+import { Y } from "./components/Y";
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -8,6 +10,11 @@ interface ContainerProps {
   debug?: boolean | string;
 }
 
-export function Container({ children, debug = false }: ContainerProps) {
+function Container({ children, debug = false }: ContainerProps) {
   return <Main debug={debug}>{children}</Main>;
 }
+
+Container.X = X;
+Container.Y = Y;
+
+export { Container };
