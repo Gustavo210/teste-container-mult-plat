@@ -1,48 +1,26 @@
 import { Container } from "@/COMPONENTE/Native";
+import { Img } from "@mobilestock-native/image";
 import { Typography } from "@mobilestock-native/typography";
 import React from "react";
+import { Button } from "react-native";
 
 export default function IndexAndroid() {
   return (
     <Container.Y>
-      <Container.X>
-        <Typography align="CENTER">meu container 1</Typography>
+      <Container.Y columnNumber={1}>
+        <Img
+          // size="FULL"
+          size="MD"
+          alt="A beautiful view of a mountain landscape"
+          src="https://images.unsplash.com/photo-1742201587774-f44fe79556f9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+      </Container.Y>
+      <Container.X gap="NONE">
+        <Typography weight="BOLD">40248 - Tênis Adidas new shoes</Typography>
+        <Typography>Receba entre 11/06 e 13/06</Typography>
       </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 2</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 3</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 4</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 5</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 6</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 7</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 8</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 9</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 10</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 11</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 12</Typography>
-      </Container.X>
-      <Container.X>
-        <Typography align="CENTER">meu container 12</Typography>
+      <Container.X columnNumber={1}>
+        <Button title="teste" />
       </Container.X>
     </Container.Y>
   );
