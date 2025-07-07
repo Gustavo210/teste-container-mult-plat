@@ -50,6 +50,7 @@ const VirtualizedColumn = styled.View<{ debug: boolean | string }>`
     typeof debug === "string"
       ? `${debug}`
       : theme.colors.container.visibleArea};
+  opacity: 0.5;
   border: 1px dashed
     ${({ debug, theme }) =>
       typeof debug === "string" ? debug : theme.colors.container.visibleArea};
