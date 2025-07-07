@@ -41,6 +41,7 @@ export default function RootLayout() {
         <Stack
           initialRouteName="index"
           screenOptions={{
+            orientation: "all",
             headerTitle: (props) => {
               return (
                 <Text style={{ fontFamily: "SpaceMono", fontSize: 18 }}>
