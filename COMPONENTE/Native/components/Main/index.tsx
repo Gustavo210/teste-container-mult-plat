@@ -1,3 +1,4 @@
+import { Typography } from "@mobilestock-native/typography";
 import React from "react";
 import { styled } from "styled-components/native";
 
@@ -15,7 +16,16 @@ export function Main({ children, debug = false }: ContainerMainProps) {
           {Array.from({
             length: 4,
           }).map((_, index) => (
-            <VirtualizedColumn key={index} debug={debug} />
+            <VirtualizedColumn key={index} debug={debug}>
+              <Typography
+                size="SM"
+                align="CENTER"
+                family="POPPINS-BOLD"
+                weight="BOLD"
+              >
+                Coluna: {index + 1}
+              </Typography>
+            </VirtualizedColumn>
           ))}
         </ColumnContainer>
       )}
@@ -46,6 +56,7 @@ const ColumnContainer = styled.View`
 
 const VirtualizedColumn = styled.View<{ debug: boolean | string }>`
   flex: 1;
+  justify-content: flex-end;
   background-color: ${({ debug, theme }) =>
     typeof debug === "string"
       ? `${debug}`

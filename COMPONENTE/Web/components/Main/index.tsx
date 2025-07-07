@@ -1,5 +1,7 @@
+import { Typography } from "@mobilestockweb/typography";
 import React from "react";
 import { styled } from "styled-components";
+import { Resize } from "../Resize";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,9 +14,20 @@ export function Main({ children, debug = false }: LayoutProps) {
       {children}
       {debug && (
         <ColumnContainer>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <VirtualizedColumn key={index} debug={debug} />
-          ))}
+          <Resize>
+            {Array.from({ length: 12 }).map((_, index) => (
+              <VirtualizedColumn key={index} debug={debug}>
+                <Typography
+                  size="SM"
+                  align="CENTER"
+                  family="POPPINS"
+                  weight="BOLD"
+                >
+                  Coluna: {index + 1}
+                </Typography>
+              </VirtualizedColumn>
+            ))}
+          </Resize>
         </ColumnContainer>
       )}
     </PageWrapper>
@@ -29,7 +42,7 @@ const PageWrapper = styled.div`
   flex-direction: column;
   margin: 0 auto;
   gap: 1rem;
-  /* position: relative; */
+  position: relative;
   padding: 0px 4px 12px 4px;
   height: 100%; //TODO verificar se vai ser bom deixar isso aqui
 `;
@@ -39,13 +52,15 @@ const ColumnContainer = styled(PageWrapper)`
   flex-direction: row;
   position: absolute;
   padding: 0;
-  margin: 0;
   top: 0;
   z-index: -1;
 `;
 
 const VirtualizedColumn = styled.div<{ debug: boolean | string }>`
   flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   background-color: ${({ debug, theme }) =>
     typeof debug === "string"
       ? `${debug}`
