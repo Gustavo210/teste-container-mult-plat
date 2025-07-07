@@ -1,6 +1,7 @@
 import { Typography } from "@mobilestock-native/typography";
 import React from "react";
 import { styled } from "styled-components/native";
+import { Resize } from "../Resize";
 
 interface ContainerMainProps {
   children: React.ReactNode;
@@ -13,20 +14,22 @@ export function Main({ children, debug = false }: ContainerMainProps) {
       <PageWrapper>{children}</PageWrapper>
       {debug && (
         <ColumnContainer>
-          {Array.from({
-            length: 4,
-          }).map((_, index) => (
-            <VirtualizedColumn key={index} debug={debug}>
-              <Typography
-                size="SM"
-                align="CENTER"
-                family="POPPINS-BOLD"
-                weight="BOLD"
-              >
-                Coluna: {index + 1}
-              </Typography>
-            </VirtualizedColumn>
-          ))}
+          <Resize>
+            {Array.from({
+              length: 12,
+            }).map((_, index) => (
+              <VirtualizedColumn key={index} debug={debug}>
+                <Typography
+                  size="SM"
+                  align="CENTER"
+                  family="POPPINS-BOLD"
+                  weight="BOLD"
+                >
+                  Coluna: {index + 1}
+                </Typography>
+              </VirtualizedColumn>
+            ))}
+          </Resize>
         </ColumnContainer>
       )}
     </ContainerRelative>
