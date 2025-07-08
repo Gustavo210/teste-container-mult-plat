@@ -15,7 +15,6 @@ export function Resize({ children }: { children?: React.ReactNode }) {
   useEffect(() => {
     const max = getMaxChildren(width);
     setMaxChildren(max);
-    console.log(`Max children set to: ${max} for width: ${width}`);
   }, [width]);
 
   const childrenArray = React.Children.toArray(children).slice(0, maxChildren);

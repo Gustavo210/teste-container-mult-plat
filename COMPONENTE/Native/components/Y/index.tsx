@@ -1,34 +1,37 @@
 import React from "react";
-import { css, DefaultTheme, styled } from "styled-components/native";
-import { Resize } from "../Resize";
-import { Stack } from "../Stack";
+import { View } from "react-native";
+import { DefaultTheme, useTheme } from "styled-components/native";
 
 export function Y({
   children,
-  gap = "MD",
-  columnNumber,
+  gap,
+  noFlex,
 }: {
+  noFlex?: boolean;
   children?: React.ReactNode;
   gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
-  columnNumber?: number;
 }) {
+  const theme = useTheme();
+  function calculateGap(): number {
+    if (!gap) return 0;
+    const GapTag = gap.toLowerCase() as keyof DefaultTheme["gaps"];
+    return Number(theme.gaps[GapTag]);
+  }
+
   return (
-    <YContainer columnNumber={columnNumber} gap={gap}>
-      <Resize>{children}</Resize>
-    </YContainer>
+    <View
+      style={[
+        {
+          flexDirection: "column",
+          backgroundColor: "cadetblue",
+          gap: calculateGap(),
+        },
+        noFlex && {
+          flex: 1,
+        },
+      ]}
+    >
+      {children}
+    </View>
   );
 }
-
-const YContainer = styled(Stack)<{
-  gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
-}>`
-  flex-direction: row;
-  ${({ theme, gap }) => {
-    if (!gap) return css``;
-    const GapTag = gap.toLowerCase() as keyof DefaultTheme["gaps"];
-    return css`
-      gap: ${theme.gaps[GapTag]};
-    `;
-  }}
-  background-color: red;
-`;
