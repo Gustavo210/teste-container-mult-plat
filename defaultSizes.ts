@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 
 function anToWeSize(value: `${number}rem`) {
   const t = require("@mobilestock-native/tools");
-  return Platform.OS === "android" ? t.default.calculateSpacing(value) : value;
+  return Platform.OS === "android" ? t.default.calculateRemToPx(value) : value;
 }
 function anToWeColumns(value: number) {
   return Platform.OS === "android" ? Math.ceil(value / 3) : value;
