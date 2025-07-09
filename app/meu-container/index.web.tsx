@@ -1,25 +1,66 @@
 import { Container } from "@/COMPONENTE/Web";
-import { Img } from "@mobilestockweb/image";
+import { Spacer } from "@mobilestockweb/spacer";
 import { Typography } from "@mobilestockweb/typography";
 import React from "react";
+import styled from "styled-components";
 
 export default function IndexWeb() {
   return (
-    <Container.Y>
-      <Container.Y columnNumber={1}>
-        <Img
-          size="FULL"
-          alt="A beautiful view of a mountain landscape"
-          src="https://images.unsplash.com/photo-1742201587774-f44fe79556f9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-      </Container.Y>
-      <Container.X gap="NONE">
-        <Typography weight="BOLD">40248 - Tênis Adidas new shoes</Typography>
-        <Typography>Receba entre 11/06 e 13/06</Typography>
-      </Container.X>
-      <Container.X columnNumber={1}>
-        <button>teste</button>
-      </Container.X>
-    </Container.Y>
+    <div
+      style={{
+        overflow: "hidden",
+        // gap: 10,
+      }}
+    >
+      <Typography align="CENTER" size="LG" weight="BOLD" family="POPPINS">
+        X com filhos
+      </Typography>
+      <Container.Horizontal gap="MD">
+        <ContainerCrescente color="green" />
+        <ContainerCrescente color="yellow" />
+        <ContainerCrescente color="blue" />
+        <ContainerCrescente color="pink" />
+      </Container.Horizontal>
+      <Spacer size="MD" />
+      <Typography align="CENTER" size="LG" weight="BOLD" family="POPPINS">
+        Y com filhos
+      </Typography>
+      <Container.Vertical gap="XS">
+        <ContainerCrescente noFlex color="green" />
+        <ContainerCrescente noFlex color="yellow" />
+        <ContainerCrescente noFlex color="blue" />
+        <ContainerCrescente noFlex color="pink" />
+      </Container.Vertical>
+      <Spacer size="MD" />
+      <Typography align="CENTER" size="LG" weight="BOLD" family="POPPINS">
+        X com filhos XY
+      </Typography>
+      <Container.Horizontal gap="MD">
+        <Container.Vertical full gap="XS">
+          <ContainerCrescente noFlex color="green" />
+          <ContainerCrescente noFlex color="yellow" />
+          <Container.Horizontal gap="MD">
+            <ContainerCrescente color="blue" />
+            <ContainerCrescente color="purple" />
+          </Container.Horizontal>
+        </Container.Vertical>
+        <Container.Horizontal full>
+          <Container.Vertical full gap="XS">
+            <ContainerCrescente color="blue" />
+            <ContainerCrescente color="pink" />
+          </Container.Vertical>
+        </Container.Horizontal>
+      </Container.Horizontal>
+    </div>
   );
 }
+
+const ContainerCrescente = styled.div<{ noFlex?: boolean; color?: string }>`
+  /* width: 25%; */
+  ${(props) => (props.noFlex ? "" : "flex: 1;")}
+  /* flex: 1; */
+  min-width: 50px;
+  width: 100%;
+  height: 50px;
+  background-color: ${(props) => props.color || "red"};
+`;
