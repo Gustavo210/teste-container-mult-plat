@@ -40,6 +40,13 @@ export const defaultSizes = {
     "2xl": tools.calculateRemToPx("1.75rem"),
     "3xl": tools.calculateRemToPx("2rem"),
   },
+  padding: {
+    none: 0,
+    "2xs": tools.calculateRemToPx("0.25rem"),
+    xs: tools.calculateRemToPx("0.5rem"),
+    sm: tools.calculateRemToPx("0.75rem"),
+    md: tools.calculateRemToPx("1rem"),
+  },
   sizeImage: {
     xs: tools.calculateImageSize("4.125rem"),
     sm: tools.calculateImageSize("5.625rem"),

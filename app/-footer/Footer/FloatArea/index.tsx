@@ -1,28 +1,31 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components/native";
+import { useFooterContext } from "../footerContext";
 
 // Importar o hook do contexto do Footer
-import { useFooterHeight } from "../index";
 
-interface ActionAreaProps {
+interface FloatAreaProps {
   children: ReactNode;
   align?: "LEFT" | "RIGHT";
 }
 
-export function ActionArea({ children, align = "LEFT" }: ActionAreaProps) {
-  const footerHeight = useFooterHeight();
+export function FloatArea({ children, align = "LEFT" }: FloatAreaProps) {
+  // fazer isso em um contexto separado
+  // Impedir o uso direto do FloatArea sem o Footer
+  const { footerHeight } = useFooterContext();
 
-  console.log("ActionArea - Footer height:", footerHeight);
+  if (!footerHeight) return null;
 
   return (
-    <ActionAreaWrapper $align={align} $footerHeight={footerHeight}>
+    <FloatAreaWrapper $align={align} $footerHeight={footerHeight}>
       {children}
-    </ActionAreaWrapper>
+    </FloatAreaWrapper>
   );
 }
 
-const ActionAreaWrapper = styled.View<{
-  $align: ActionAreaProps["align"];
+// padding personalizado
+const FloatAreaWrapper = styled.View<{
+  $align: FloatAreaProps["align"];
   $footerHeight: number;
 }>`
   position: absolute;

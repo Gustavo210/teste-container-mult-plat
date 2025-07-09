@@ -187,4 +187,5 @@ export const theme = {
   gaps: { ...defaultSizes.gaps },
   borderRadius: { ...defaultSizes.borderRadius },
   sizeImage: { ...defaultSizes.sizeImage },
+  padding: { ...defaultSizes.padding },
 } as const;
