@@ -1,6 +1,6 @@
 import { Slot } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, ScrollView } from "react-native";
 
 const Container =
   Platform.OS === "web"
@@ -9,8 +9,10 @@ const Container =
 
 export default function Layout() {
   return (
-    <Container debug>
-      <Slot />
-    </Container>
+    <ScrollView>
+      <Container debug>
+        <Slot />
+      </Container>
+    </ScrollView>
   );
 }
