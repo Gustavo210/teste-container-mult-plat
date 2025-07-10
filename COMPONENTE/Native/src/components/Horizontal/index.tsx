@@ -1,14 +1,14 @@
-import { ViewBase, ViewBaseProps } from "../ViewBase";
+import { ViewBase, ViewBaseProps } from '../ViewBase'
 
 export function Horizontal({ children, ...rest }: ViewBaseProps) {
   return (
     <ViewBase
       style={{
-        flexDirection: "row",
+        flexDirection: 'row'
       }}
       {...rest}
     >
       {children}
     </ViewBase>
-  );
+  )
 }
