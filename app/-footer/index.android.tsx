@@ -1,7 +1,7 @@
+import { Container } from "@mobilestock-native/container";
 import { Typography } from "@mobilestock-native/typography";
 import React, { useState } from "react";
-import { FlatList, Modal, Text, TouchableOpacity, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { FlatList, Modal, Text, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import Ion from "react-native-vector-icons/Ionicons";
 import MD from "react-native-vector-icons/MaterialCommunityIcons";
@@ -10,17 +10,11 @@ import { styled } from "styled-components/native";
 import { Footer } from "./Footer";
 
 export default function IndexAndroid() {
-  const insets = useSafeAreaInsets();
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingBottom: insets.bottom,
-      }}
-    >
-      <LayoutContent>
+    <>
+      <Container.Vertical full>
         <FlatList
           data={Array.from({ length: 50 }, (_, i) => ({
             id: i,
@@ -33,45 +27,7 @@ export default function IndexAndroid() {
             </Item>
           )}
         />
-
-        <Footer>
-          <Footer.FloatArea align="RIGHT">
-            <FloatButton>
-              <Typography size="XS">Float</Typography>
-            </FloatButton>
-            <FloatButton>
-              <Typography size="XS">Float</Typography>
-            </FloatButton>
-          </Footer.FloatArea>
-          <Footer.ContentArea padding="XS" noFlex>
-            <ItemFooter>
-              <MD name="shopping-outline" size={24} color="black" />
-              <Text>Produtos</Text>
-            </ItemFooter>
-            <ItemFooter>
-              <Ion name="cart-outline" size={24} color="black" />
-              <Text>Pedido</Text>
-            </ItemFooter>
-            <ItemFooter>
-              <Feather name="credit-card" size={24} color="black" />
-              <Text>Look Pay</Text>
-            </ItemFooter>
-            <ItemFooter>
-              <MI name="storefront" size={24} color="black" />
-              <Text>Minha Loja</Text>
-            </ItemFooter>
-            <TouchableOpacity
-              style={{ flex: 1 }}
-              onPress={() => setModalVisible(true)}
-            >
-              <ItemFooter>
-                <Feather name="menu" size={24} color="black" />
-                <Text>Menu</Text>
-              </ItemFooter>
-            </TouchableOpacity>
-          </Footer.ContentArea>
-        </Footer>
-      </LayoutContent>
+      </Container.Vertical>
 
       <Modal
         visible={modalVisible}
@@ -108,7 +64,44 @@ export default function IndexAndroid() {
           </DialogContainer>
         </ModalOverlay>
       </Modal>
-    </View>
+      <Footer fixed padding="2XS" fillColor="red">
+        <Footer.FloatArea align="RIGHT">
+          <FloatButton>
+            <Typography size="XS">Float</Typography>
+          </FloatButton>
+          <FloatButton>
+            <Typography size="XS">Float</Typography>
+          </FloatButton>
+        </Footer.FloatArea>
+        <Footer.ContentArea>
+          <ItemFooter>
+            <MD name="shopping-outline" size={24} color="black" />
+            <Text style={{ fontSize: 12 }}>Produtos</Text>
+          </ItemFooter>
+          <ItemFooter>
+            <Ion name="cart-outline" size={24} color="black" />
+            <Text style={{ fontSize: 12 }}>Pedido</Text>
+          </ItemFooter>
+          <ItemFooter>
+            <Feather name="credit-card" size={24} color="black" />
+            <Text style={{ fontSize: 12 }}>Look Pay</Text>
+          </ItemFooter>
+          <ItemFooter>
+            <MI name="storefront" size={24} color="black" />
+            <Text style={{ fontSize: 12 }}>Minha Loja</Text>
+          </ItemFooter>
+          <TouchableOpacity
+            style={{ flex: 1 }}
+            onPress={() => setModalVisible(true)}
+          >
+            <ItemFooter>
+              <Feather name="menu" size={24} color="black" />
+              <Text>Menu</Text>
+            </ItemFooter>
+          </TouchableOpacity>
+        </Footer.ContentArea>
+      </Footer>
+    </>
   );
 }
 
@@ -166,8 +159,6 @@ const CloseButtonText = styled.Text`
   font-weight: bold;
 `;
 
-//
-
 const FloatButton = styled.TouchableOpacity`
   height: 64px;
   width: 64px;
@@ -198,27 +189,8 @@ const ItemFooter = styled.View`
   flex: 1;
 `;
 
-const LayoutContent = styled.View`
-  flex: 1;
-`;
-
 const Item = styled.View<{ color: string }>`
   background-color: ${(props) => props.color};
   padding: 12px;
   border-radius: 6px;
-`;
-
-const DialogBox = styled.View`
-  background-color: white;
-  padding: 24px;
-  border-radius: 12px;
-  width: 80%;
-  align-items: center;
-`;
-
-const CloseButton = styled.TouchableOpacity`
-  margin-top: 16px;
-  padding: 10px 20px;
-  background-color: #7a6695;
-  border-radius: 8px;
 `;

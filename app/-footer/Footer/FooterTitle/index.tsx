@@ -3,7 +3,7 @@ import React from "react";
 import { DefaultTheme } from "styled-components";
 import styled from "styled-components/native";
 
-interface Title {
+interface TitleProps {
   children: string;
   family?: Uppercase<DefaultTheme["font"]["families"][number]>;
   weight?: Uppercase<keyof DefaultTheme["font"]["weight"] & string>;
@@ -15,7 +15,7 @@ export function Title({
   family = "POPPINS",
   weight = "REGULAR",
   size = "MD",
-}: Title) {
+}: TitleProps) {
   return (
     <TitleWrapper>
       <Typography family={"POPPINS"} weight={weight} size={size}>

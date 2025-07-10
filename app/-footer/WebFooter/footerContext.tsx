@@ -1,26 +1,26 @@
-import React, { createContext, useContext, useState } from "react";
+// import React, { createContext, useContext, useState } from "react";
 
-interface FooterContextType {
-  footerHeight: number;
-  setFooterHeight: (height: number) => void;
-}
+// interface FooterContextType {
+//   footerHeight: number;
+//   setFooterHeight: (height: number) => void;
+// }
 
-const FooterContext = createContext<FooterContextType | undefined>(undefined);
+// const FooterContext = createContext<FooterContextType | undefined>(undefined);
 
-export const useFooterContext = () => {
-  const context = useContext(FooterContext);
-  if (!context) {
-    throw new Error("useFooterContext must be used within a FooterProvider");
-  }
-  return context;
-};
+// export const useFooterContext = () => {
+//   const context = useContext(FooterContext);
+//   if (!context) {
+//     throw new Error("useFooterContext must be used within a FooterProvider");
+//   }
+//   return context;
+// };
 
-export const FooterProvider = ({ children }: { children: React.ReactNode }) => {
-  const [footerHeight, setFooterHeight] = useState(0);
+// export const FooterProvider = ({ children }: { children: React.ReactNode }) => {
+//   const [footerHeight, setFooterHeight] = useState(0);
 
-  return (
-    <FooterContext.Provider value={{ footerHeight, setFooterHeight }}>
-      {children}
-    </FooterContext.Provider>
-  );
-};
+//   return (
+//     <FooterContext.Provider value={{ footerHeight, setFooterHeight }}>
+//       {children}
+//     </FooterContext.Provider>
+//   );
+// };

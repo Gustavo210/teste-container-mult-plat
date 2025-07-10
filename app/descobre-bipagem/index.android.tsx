@@ -1,22 +1,15 @@
+import { Container } from "@mobilestock-native/container";
 import { Typography } from "@mobilestock-native/typography";
 import React from "react";
 import { View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 import { Footer } from "../-footer/Footer";
 
 export default function IndexAndroid() {
-  const insets = useSafeAreaInsets();
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingBottom: insets.bottom,
-        backgroundColor: "lightgray",
-      }}
-    >
-      <Tela>
-        <Conteudo>
+    <>
+      <Container.Vertical full>
+        <Container.Vertical full>
           <View
             style={{
               flexDirection: "row",
@@ -33,14 +26,14 @@ export default function IndexAndroid() {
           <Camera>
             <Typography>Espaço da câmera</Typography>
           </Camera>
-        </Conteudo>
-        <Footer bottomSpace={40}>
+        </Container.Vertical>
+        <Footer bottomSpace="2XL">
           <Footer.Title weight="BOLD" size="LG">
             Escaneie o qrcode para continuar.
           </Footer.Title>
         </Footer>
-      </Tela>
-    </View>
+      </Container.Vertical>
+    </>
   );
 }
 

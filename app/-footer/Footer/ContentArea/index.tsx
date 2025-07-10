@@ -1,4 +1,5 @@
 // ContentArea.tsx
+import { Container } from "@mobilestock-native/container";
 import React from "react";
 import styled, { DefaultTheme } from "styled-components/native";
 
@@ -31,7 +32,7 @@ export function ContentArea({
   );
 }
 
-const RowContainer = styled.View<{
+const RowContainer = styled(Container)<{
   $noFlex?: boolean;
   $padding?: ContentAreaProps["padding"];
   $gap?: ContentAreaProps["gap"];

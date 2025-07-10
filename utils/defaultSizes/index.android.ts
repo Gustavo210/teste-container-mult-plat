@@ -46,6 +46,9 @@ export const defaultSizes = {
     xs: tools.calculateRemToPx("0.5rem"),
     sm: tools.calculateRemToPx("0.75rem"),
     md: tools.calculateRemToPx("1rem"),
+    lg: tools.calculateRemToPx("1.5rem"),
+    xl: tools.calculateRemToPx("2rem"),
+    "2xl": tools.calculateRemToPx("3rem"),
   },
   sizeImage: {
     xs: tools.calculateImageSize("4.125rem"),

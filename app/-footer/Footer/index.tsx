@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components/native";
+import styled, { DefaultTheme } from "styled-components/native";
 
+import { Dimensions } from "react-native";
 import { ContentArea } from "./ContentArea";
 import { FloatArea } from "./FloatArea";
 import { Title } from "./FooterTitle";
@@ -10,16 +11,18 @@ interface FooterProps {
   children?: React.ReactNode;
   fixed?: boolean;
   fillColor?: string;
-  padding?: number;
-  bottomSpace?: number;
+  padding?: Uppercase<keyof DefaultTheme["padding"]>;
+  bottomSpace?: Uppercase<keyof DefaultTheme["padding"]>;
+  gap?: Uppercase<keyof DefaultTheme["gaps"]>;
 }
 
 export function FooterComponent({
   children,
   fixed = false,
   fillColor,
-  padding = 0,
+  padding = "XS",
   bottomSpace,
+  gap = "NONE",
 }: FooterProps) {
   return (
     <FooterProvider>
@@ -28,6 +31,7 @@ export function FooterComponent({
         fillColor={fillColor}
         padding={padding}
         bottomSpace={bottomSpace}
+        gap={gap}
       >
         {children}
       </FooterWithContext>
@@ -38,9 +42,10 @@ export function FooterComponent({
 function FooterWithContext({
   children,
   fixed,
-  fillColor,
-  padding,
+  fillColor = "",
+  padding = "XS",
   bottomSpace,
+  gap = "NONE",
 }: FooterProps) {
   const { setFooterHeight, footerHeight } = useFooterContext();
 
@@ -61,16 +66,14 @@ function FooterWithContext({
 
   return (
     <>
-      {!!fixed && <AntiFooter height={footerHeight} />}
-
       {FloatAreas}
-
+      <AntiFooter height={footerHeight} />
       <FooterContainer
         onLayout={returnFooterHeight}
-        $fixed={!!fixed}
         $fillColor={fillColor}
-        $padding={padding ?? 0}
-        $bottomSpace={bottomSpace ?? padding ?? 0}
+        $padding={padding}
+        $bottomSpace={bottomSpace ?? padding}
+        gap={gap}
       >
         {regularChildren}
       </FooterContainer>
@@ -89,19 +92,24 @@ const AntiFooter = styled.View<{ height: number }>`
 `;
 
 const FooterContainer = styled.View<{
-  $fixed: boolean;
   $fillColor?: string;
-  $padding: number;
-  $bottomSpace: number;
+  $padding: FooterProps["padding"];
+  $bottomSpace: FooterProps["bottomSpace"];
+  gap: FooterProps["gap"];
 }>`
-  position: ${({ $fixed }) => ($fixed ? "absolute" : "relative")};
+  position: absolute;
   bottom: 0;
-  width: 100%;
+  justify-self: center;
+  width: ${Dimensions.get("window").width}px;
   min-height: 16px;
-  align-items: center;
-  justify-content: space-around;
-  padding: ${({ $padding }) => `${$padding}px`};
-  z-index: 1000;
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  padding: ${({ $padding, theme }) =>
+    theme.padding[$padding.toLocaleLowerCase()]};
+  gap: ${({ gap, theme }) => theme.gaps[gap.toLocaleLowerCase()]};
+  z-index: 10;
   background-color: ${({ $fillColor }) => $fillColor || ""};
-  padding-bottom: ${({ $bottomSpace }) => `${$bottomSpace}px`};
+  padding-bottom: ${({ $bottomSpace, theme }) =>
+    theme.padding[$bottomSpace.toLocaleLowerCase()]};
+  margin-bottom: 12px;
 `;

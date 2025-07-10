@@ -10,7 +10,6 @@ interface FloatAreaProps {
 }
 
 export function FloatArea({ children, align = "LEFT" }: FloatAreaProps) {
-  // fazer isso em um contexto separado
   // Impedir o uso direto do FloatArea sem o Footer
   const { footerHeight } = useFooterContext();
 
@@ -30,12 +29,13 @@ const FloatAreaWrapper = styled.View<{
 }>`
   position: absolute;
   align-items: center;
-  bottom: ${({ $footerHeight }) => $footerHeight}px;
+  bottom: ${({ $footerHeight }) => $footerHeight + 12}px;
   padding-inline: 16px;
   align-self: ${({ $align }) =>
     $align === "RIGHT" ? "flex-end" : "flex-start"};
   border-style: solid;
   border-width: 1px;
   border-color: #000000;
+  overflow: hidden;
   width: 25%;
 `;
