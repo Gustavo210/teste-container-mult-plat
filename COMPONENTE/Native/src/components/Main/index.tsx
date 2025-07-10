@@ -1,13 +1,16 @@
-import { styled } from 'styled-components/native'
-
-import { ViewBase } from '../ViewBase'
+import { styled } from "styled-components/native";
+import { ViewBase } from "../ViewBase";
 
 interface ContainerMainProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function Main({ children }: ContainerMainProps) {
-  return <PageWrapper gap="NONE">{children}</PageWrapper>
+  return (
+    <ContainerSafeArea>
+      <PageWrapper gap="NONE">{children}</PageWrapper>
+    </ContainerSafeArea>
+  );
 }
 
 const PageWrapper = styled(ViewBase)`
@@ -16,4 +19,7 @@ const PageWrapper = styled(ViewBase)`
   padding: 0px 4px 12px 4px;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.container.default};
-`
+`;
+const ContainerSafeArea = styled.SafeAreaView`
+  flex: 1;
+`;
