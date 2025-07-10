@@ -4,8 +4,8 @@ import { Platform } from "react-native";
 
 const Container =
   Platform.OS === "web"
-    ? require("../../COMPONENTE/Web").Container.Main
-    : require("../../COMPONENTE/Native").Container.Main;
+    ? require("../../COMPONENTE/Web/src").Container.Main
+    : require("../../COMPONENTE/Native/src").Container.Main;
 
 export default function Layout() {
   return (
