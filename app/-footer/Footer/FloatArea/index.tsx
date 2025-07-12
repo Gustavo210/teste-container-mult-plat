@@ -1,41 +1,51 @@
+import { Container, ViewBaseProps } from "@mobilestock-native/container";
 import React, { ReactNode } from "react";
-import styled from "styled-components/native";
+import styled, { DefaultTheme } from "styled-components/native";
 import { useFooterContext } from "../footerContext";
 
 // Importar o hook do contexto do Footer
 
-interface FloatAreaProps {
+interface FloatAreaProps extends Omit<ViewBaseProps, "align"> {
   children: ReactNode;
   align?: "LEFT" | "RIGHT";
+  padding?: Uppercase<keyof DefaultTheme["padding"]>;
 }
 
-export function FloatArea({ children, align = "LEFT" }: FloatAreaProps) {
+export function FloatArea({
+  children,
+  align = "LEFT",
+  padding = "2XS",
+  ...rest
+}: FloatAreaProps) {
   // Impedir o uso direto do FloatArea sem o Footer
   const { footerHeight } = useFooterContext();
 
   if (!footerHeight) return null;
 
   return (
-    <FloatAreaWrapper $align={align} $footerHeight={footerHeight}>
+    <FloatAreaWrapper
+      $align={align}
+      $footerHeight={footerHeight}
+      $padding={padding}
+      {...rest}
+    >
       {children}
     </FloatAreaWrapper>
   );
 }
 
 // padding personalizado
-const FloatAreaWrapper = styled.View<{
+const FloatAreaWrapper = styled(Container.Vertical)<{
   $align: FloatAreaProps["align"];
   $footerHeight: number;
+  $padding?: Uppercase<keyof DefaultTheme["padding"]>;
 }>`
   position: absolute;
-  align-items: center;
   bottom: ${({ $footerHeight }) => $footerHeight + 12}px;
-  padding-inline: 16px;
+  padding: ${({ theme, $padding }) => theme.padding[$padding.toLowerCase()]};
+  max-width: 25%;
+  align-items: center;
   align-self: ${({ $align }) =>
     $align === "RIGHT" ? "flex-end" : "flex-start"};
-  border-style: solid;
-  border-width: 1px;
-  border-color: #000000;
   overflow: hidden;
-  width: 25%;
 `;

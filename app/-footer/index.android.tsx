@@ -46,7 +46,7 @@ export default function IndexAndroid() {
                 coleta
               </BodyText>
             </ModalBody>
-            <Footer fillColor="red" fixed>
+            <Footer backGroundColor="red" full>
               <Footer.FloatArea>
                 <DialogButton>
                   <MD name="check" size={24} color="white" />
@@ -64,7 +64,7 @@ export default function IndexAndroid() {
           </DialogContainer>
         </ModalOverlay>
       </Modal>
-      <Footer fixed padding="2XS" fillColor="red">
+      <Footer full padding="2XS" backGroundColor="red">
         <Footer.FloatArea align="RIGHT">
           <FloatButton>
             <Typography size="XS">Float</Typography>

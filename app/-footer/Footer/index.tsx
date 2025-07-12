@@ -9,8 +9,8 @@ import { FooterProvider, useFooterContext } from "./footerContext";
 
 interface FooterProps {
   children?: React.ReactNode;
-  fixed?: boolean;
-  fillColor?: string;
+  full?: boolean;
+  backGroundColor?: string;
   padding?: Uppercase<keyof DefaultTheme["padding"]>;
   bottomSpace?: Uppercase<keyof DefaultTheme["padding"]>;
   gap?: Uppercase<keyof DefaultTheme["gaps"]>;
@@ -18,8 +18,8 @@ interface FooterProps {
 
 export function FooterComponent({
   children,
-  fixed = false,
-  fillColor,
+  full = true,
+  backGroundColor,
   padding = "XS",
   bottomSpace,
   gap = "NONE",
@@ -27,8 +27,8 @@ export function FooterComponent({
   return (
     <FooterProvider>
       <FooterWithContext
-        fixed={fixed}
-        fillColor={fillColor}
+        full={full}
+        backGroundColor={backGroundColor}
         padding={padding}
         bottomSpace={bottomSpace}
         gap={gap}
@@ -41,8 +41,8 @@ export function FooterComponent({
 
 function FooterWithContext({
   children,
-  fixed,
-  fillColor = "",
+  full,
+  backGroundColor = "",
   padding = "XS",
   bottomSpace,
   gap = "NONE",
@@ -70,9 +70,10 @@ function FooterWithContext({
       <AntiFooter height={footerHeight} />
       <FooterContainer
         onLayout={returnFooterHeight}
-        $fillColor={fillColor}
+        $backGroundColor={backGroundColor}
         $padding={padding}
         $bottomSpace={bottomSpace ?? padding}
+        $full={full}
         gap={gap}
       >
         {regularChildren}
@@ -92,15 +93,18 @@ const AntiFooter = styled.View<{ height: number }>`
 `;
 
 const FooterContainer = styled.View<{
-  $fillColor?: string;
+  $backGroundColor?: string;
   $padding: FooterProps["padding"];
   $bottomSpace: FooterProps["bottomSpace"];
+  $full?: boolean;
   gap: FooterProps["gap"];
 }>`
   position: absolute;
   bottom: 0;
   justify-self: center;
-  width: ${Dimensions.get("window").width}px;
+  width: ${({ $full }) =>
+    $full ? `${Dimensions.get("window").width}px` : "100%"};
+
   min-height: 16px;
   /* align-items: center; */
   /* justify-content: space-around; */
@@ -108,7 +112,7 @@ const FooterContainer = styled.View<{
     theme.padding[$padding.toLocaleLowerCase()]};
   gap: ${({ gap, theme }) => theme.gaps[gap.toLocaleLowerCase()]};
   z-index: 10;
-  background-color: ${({ $fillColor }) => $fillColor || ""};
+  background-color: ${({ $backGroundColor }) => $backGroundColor || ""};
   padding-bottom: ${({ $bottomSpace, theme }) =>
     theme.padding[$bottomSpace.toLocaleLowerCase()]};
   margin-bottom: 12px;
