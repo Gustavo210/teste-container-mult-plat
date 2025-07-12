@@ -52,6 +52,13 @@ export const defaultSizes = {
     "2xl": "28.125rem",
     full: "100%",
   },
+padding: {
+    none: 0,
+    "2xs": 4,
+    xs: 8,
+    sm: 12,
+    md: 16,
+  },
   borderRadius: {
     rounded: "99999px",
     default: "5px",

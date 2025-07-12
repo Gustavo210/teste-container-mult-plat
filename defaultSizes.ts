@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 
 function anToWeSize(value: `${number}rem`) {
   const t = require("@mobilestock-native/tools");
-  return Platform.OS === "android" ? t.default.calculateSpacing(value) : value;
+  return Platform.OS === "android" ? t.default.calculateRemToPx(value) : value;
 }
 function anToWeColumns(value: number) {
   return Platform.OS === "android" ? Math.ceil(value / 3) : value;
@@ -34,6 +34,10 @@ export default {
       xl: anToWeSize("1.75rem"),
       "2xl": anToWeSize("1.875rem"),
       "3xl": anToWeSize("2rem"),
+      "4xl": anToWeSize("2.25rem"),
+      "5xl": anToWeSize("2.5rem"),
+      "6xl": anToWeSize("2.75rem"),
+      "7xl": anToWeSize("3rem"),
     },
     columns: {
       xs: anToWeColumns(1),

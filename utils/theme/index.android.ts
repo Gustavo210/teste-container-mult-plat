@@ -1,7 +1,7 @@
 import { Dimensions, PixelRatio, Platform, StatusBar } from "react-native";
 
 import defaultColors from "../defaultColors";
-import { defaultSizes } from "../defaultSizes";
+import { defaultSizes } from "../defaultSizes/index.android";
 
 export const theme = {
   colors: {
@@ -187,4 +187,5 @@ export const theme = {
   gaps: { ...defaultSizes.gaps },
   borderRadius: { ...defaultSizes.borderRadius },
   sizeImage: { ...defaultSizes.sizeImage },
+  padding: { ...defaultSizes.padding },
 } as const;

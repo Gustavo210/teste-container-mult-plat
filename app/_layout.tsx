@@ -36,7 +36,7 @@ export default function RootLayout() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#002fff" }}>
       <ThemeProvider>
         <Stack
           initialRouteName="index"
@@ -59,7 +59,7 @@ export default function RootLayout() {
                     height: 80,
                     flexDirection: "row",
                     alignItems: "center",
-                    backgroundColor: "#e5e5e5",
+                    backgroundColor: "#956868",
                     marginBottom: 5,
                   }}
                 >
