@@ -112,13 +112,13 @@ export default function IndexWeb() {
 const WebContainer = styled.div\`\`;
 `;
 
-    fs.writeFileSync(path.join(routePath, "layout.tsx"), layoutContent);
+    fs.writeFileSync(path.join(routePath, "_layout.tsx"), layoutContent);
     fs.writeFileSync(path.join(routePath, "index.tsx"), indexContent);
     fs.writeFileSync(path.join(routePath, "index.android.tsx"), androidContent);
     fs.writeFileSync(path.join(routePath, "index.web.tsx"), webContent);
 
     console.log("Arquivos de rota criados com sucesso:");
-    console.log(`- ${path.join(routeName, "layout.tsx")}`);
+    console.log(`- ${path.join(routeName, "_layout.tsx")}`);
     console.log(`- ${path.join(routeName, "index.tsx")}`);
     console.log(`- ${path.join(routeName, "index.android.tsx")}`);
     console.log(`- ${path.join(routeName, "index.web.tsx")}`);
