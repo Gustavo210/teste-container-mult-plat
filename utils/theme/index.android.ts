@@ -22,9 +22,25 @@ export const theme = {
     border: {
       visibleArea: defaultColors.pink,
     },
+    alert: {
+      default: defaultColors.cyan48,
+      urgent: defaultColors.tertiary,
+      tip: defaultColors.yellow50,
+      positiveDiff: defaultColors.green49,
+      negativeDiff: defaultColors.orange63,
+      success: defaultColors.green50,
+      error: defaultColors.red53,
+      info: defaultColors.grey40,
+      warning: defaultColors.orange60,
+    },
   },
   font: {
     families: [
+      {
+        name: "Poppins",
+        require: require("../../assets/fonts/Poppins.ttf"),
+        weight: "regular",
+      },
       {
         name: "Arial",
         require: require("../../assets/fonts/Arial.ttf"),
@@ -49,11 +65,6 @@ export const theme = {
         name: "Poppins-Light",
         require: require("../../assets/fonts/Poppins-Light.ttf"),
         weight: "light",
-      },
-      {
-        name: "Poppins",
-        require: require("../../assets/fonts/Poppins.ttf"),
-        weight: "regular",
       },
       {
         name: "Poppins-Medium",
