@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from 'styled-components'
+import { styled } from 'styled-components'
 
 import { ViewBase } from '../ViewBase'
 
@@ -8,12 +8,9 @@ interface LayoutProps {
 
 export function Main({ children }: LayoutProps) {
   return (
-    <>
-      <GlobalStyle />
-      <PageWrapper full gap="NONE">
-        {children}
-      </PageWrapper>
-    </>
+    <PageWrapper full gap="NONE">
+      {children}
+    </PageWrapper>
   )
 }
 
@@ -24,17 +21,4 @@ const PageWrapper = styled(ViewBase)`
   margin: 0 auto;
   position: relative;
   padding: 0px 4px 12px 4px;
-`
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: ${({ theme }) => theme.colors.container.default};
-  }
-
 `

@@ -1,4 +1,4 @@
-import { Container } from "@/COMPONENTE/Web";
+import { Container } from "@/COMPONENTE/Web/src";
 import { Spacer } from "@mobilestockweb/spacer";
 import { Typography } from "@mobilestockweb/typography";
 import React from "react";
@@ -12,6 +12,12 @@ export default function IndexWeb() {
         // gap: 10,
       }}
     >
+      <Typography>Padding</Typography>
+      <Container.Horizontal gap="XS" padding="2XL">
+        <ContainerCrescente color="blue" />
+        <ContainerCrescente />
+        <ContainerCrescente color="pink" />
+      </Container.Horizontal>
       <Typography align="CENTER" size="LG" weight="BOLD" family="POPPINS">
         X com filhos
       </Typography>
@@ -51,6 +57,14 @@ export default function IndexWeb() {
           </Container.Vertical>
         </Container.Horizontal>
       </Container.Horizontal>
+      <Typography align="CENTER" size="LG" weight="BOLD" family="POPPINS">
+        X com alinhamento
+      </Typography>
+      <Container.Horizontal full align="START_END" gap="MD">
+        <ContainerDefinido />
+        <ContainerDefinido color="blue" />
+        <ContainerGrande />
+      </Container.Horizontal>
     </div>
   );
 }
@@ -63,4 +77,14 @@ const ContainerCrescente = styled.div<{ noFlex?: boolean; color?: string }>`
   width: 100%;
   height: 50px;
   background-color: ${(props) => props.color || "red"};
+`;
+const ContainerDefinido = styled.div<{ color?: string }>`
+  width: 100px;
+  height: 100px;
+  background-color: ${(props) => props.color || "red"};
+`;
+const ContainerGrande = styled.div`
+  height: 200px;
+  width: 50px;
+  background-color: aqua;
 `;

@@ -1,14 +1,18 @@
-import { ViewBase, ViewBaseProps } from '../ViewBase'
+import { forwardRef } from 'react'
 
-export function Horizontal({ children, ...rest }: ViewBaseProps) {
+import { ViewBaseProps } from '../..'
+import { ViewBase } from '../ViewBase'
+
+export const Horizontal = forwardRef<HTMLDivElement, ViewBaseProps>(function Horizontal({ children, ...rest }, ref) {
   return (
     <ViewBase
       style={{
         flexDirection: 'row'
       }}
+      ref={ref}
       {...rest}
     >
       {children}
     </ViewBase>
   )
-}
+})

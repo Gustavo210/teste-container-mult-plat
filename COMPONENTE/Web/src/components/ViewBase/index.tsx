@@ -1,74 +1,107 @@
-import { useCallback } from "react";
-import { DefaultTheme, useTheme } from "styled-components";
+import { forwardRef } from 'react'
+import styled, { css, useTheme } from 'styled-components'
 
-type alignType = "START" | "CENTER" | "END";
+import { ViewBaseProps } from '../..'
+import { utils } from '../../utils'
 
-export interface ViewBaseProps extends React.HTMLAttributes<HTMLDivElement> {
-  full?: boolean;
-  gap?: Uppercase<keyof DefaultTheme["gaps"] & string>;
-  overflow?: "HIDDEN" | "SCROLL";
-  align?: `${alignType}_${alignType}` | alignType;
-}
+export const ViewBase = forwardRef<HTMLDivElement, ViewBaseProps>(function ViewBase(
+  { children, gap, full, overflow, align, padding, ...rest },
+  ref
+) {
+  const theme = useTheme()
 
-export function ViewBase({
-  children,
-  gap,
-  full,
-  style,
-  overflow,
-  align,
-  ...rest
-}: ViewBaseProps) {
-  const theme = useTheme();
-
-  if (theme === undefined) {
-    throw new Error("ViewBase must be used within a ThemeProvider");
+  if (!theme.gaps) {
+    throw new Error('ViewBase requires a theme with gaps defined')
   }
-  // TODO: verificar se o useCallback é necessário
-  const calculateGap = useCallback(() => {
-    if (!gap) return 0;
-    const GapTag = gap.toLowerCase();
-    return theme.gaps[GapTag];
-  }, [gap, theme.gaps]);
+  if (!theme.spacing) {
+    throw new Error('ViewBase requires a theme with spacing defined')
+  }
+  return (
+    <ContainerRoot ref={ref} $gap={gap} $full={full} $overflow={overflow} $align={align} $padding={padding} {...rest}>
+      {children}
+    </ContainerRoot>
+  )
+})
 
-  const configureAlign = useCallback(() => {
-    if (!align) return {};
-
-    const tokens = align
+const ContainerRoot = styled.div<{
+  $gap?: ViewBaseProps['gap']
+  $full?: ViewBaseProps['full']
+  $overflow?: ViewBaseProps['overflow']
+  $align?: ViewBaseProps['align']
+  $padding?: ViewBaseProps['padding']
+}>`
+  display: flex;
+  ${({ $gap, theme }) =>
+    $gap &&
+    css`
+      gap: ${utils.getThemeValue(theme, 'gaps', $gap)};
+    `}
+  ${({ $full }) =>
+    $full &&
+    css`
+      flex: 1;
+    `}
+  ${({ $overflow }) =>
+    $overflow &&
+    css`
+      overflow: ${$overflow.toLowerCase()};
+    `}
+  ${({ $align }) => {
+    if (!$align) return ''
+    const tokens = $align
       .toLowerCase()
-      .split("_")
-      .map((token) => {
-        if (token === "start") return "flex-start";
-        if (token === "center") return "center";
-        if (token === "end") return "flex-end";
-        throw new Error(`Invalid alignment token: ${token}`);
-      });
+      .split('_')
+      .map(token => {
+        switch (token) {
+          case 'start':
+            return 'flex-start'
+          case 'center':
+            return 'center'
+          case 'end':
+            return 'flex-end'
+          case 'between':
+            return 'space-between'
+          default:
+            throw new Error(`Invalid alignment token: ${token}`)
+        }
+      })
 
     if (tokens.length === 1) {
-      return {
-        justifyContent: tokens[0],
-        alignItems: tokens[0],
-      };
+      if (tokens[0] === 'space-between') {
+        return css`
+          justify-content: ${tokens[0]};
+        `
+      }
+      return css`
+        justify-content: ${tokens[0]};
+        align-items: ${tokens[0]};
+      `
     }
-    return {
-      justifyContent: tokens[0],
-      alignItems: tokens[1],
-    };
-  }, [align]);
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: calculateGap(),
-        ...(full && { flex: 1 }),
-        ...(overflow && { overflow: overflow.toLowerCase() }),
-        ...style,
-        ...(align && configureAlign()),
-      }}
-      {...rest}
-    >
-      {children}
-    </div>
-  );
-}
+    return css`
+      justify-content: ${tokens[0]};
+      align-items: ${tokens[1]};
+    `
+  }}
+  ${({ $padding, theme }) => {
+    if (!$padding) return ''
+    const paddingTokens = $padding.toLowerCase().split('_')
+    switch (paddingTokens.length) {
+      case 1:
+        return css`
+          padding: ${utils.getThemeValue(theme, 'spacing', paddingTokens[0])};
+        `
+      case 2:
+        return css`
+          padding: ${utils.getThemeValue(theme, 'spacing', paddingTokens[0])}
+            ${utils.getThemeValue(theme, 'spacing', paddingTokens[1])};
+        `
+      default:
+        return css`
+          padding-top: ${utils.getThemeValue(theme, 'spacing', paddingTokens[0])};
+          padding-right: ${utils.getThemeValue(theme, 'spacing', paddingTokens[1])};
+          padding-bottom: ${utils.getThemeValue(theme, 'spacing', paddingTokens[2])};
+          padding-left: ${utils.getThemeValue(theme, 'spacing', paddingTokens[3])};
+        `
+    }
+  }}
+`

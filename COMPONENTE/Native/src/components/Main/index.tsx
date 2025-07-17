@@ -22,4 +22,5 @@ const PageWrapper = styled(ViewBase)`
 `;
 const ContainerSafeArea = styled.SafeAreaView`
   flex: 1;
+  /* position: relative; */
 `;
