@@ -186,5 +186,6 @@ export const theme = {
   columns: { ...defaultSizes.columns },
   gaps: { ...defaultSizes.gaps },
   borderRadius: { ...defaultSizes.borderRadius },
+  sizeIcons: { ...defaultSizes.icons },
   sizeImage: { ...defaultSizes.sizeImage },
 } as const;
